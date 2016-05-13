@@ -17,7 +17,7 @@ A special value of matrices and Matrix Algebra is that they nable to express man
 
 $$y=ax$$
 
-A single number $a$ represents linear transformation.
+A single number $\underline{a}$ represents linear transformation.
 
 ####$R^2 \to R$ 
 
@@ -26,4 +26,43 @@ $$y=a_1x_1+a_2x_2$$
 Vector $\mathbf{A}=(a_1, a_2)$ represents linear transformation.
 
 ####$R^2 \to R^2$ 
+
+
+$$\begin{cases} y_1 = a_{11}x_1 + a_{12}x_2\\ y_2 = a_{21}x_1 + a_{22}x_2 \end{cases}$$
+
+Matrix  $\begin{pmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{pmatrix}$ represents linear transformation.
+
+$\bullet$ Q: What Matrix corresponds to a linear mapping
+
+####$R^{10} \to R^{20}$ ?             
+
+$\bullet$ Thus, for linear mappings:
+
+
+####$R \to R$  | given by numbers
+
+####$R^{n} \to R^{m}$  | given by matrices
+
+
+$\bullet$ So, we can write compactly
+
+($\star$)  $\underline{y}$=A$\underline{x}$ ; $\underline{y}$=$\binom{y_1}{y_2}$,  A = $\begin{pmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{pmatrix}$ , $\underline{x}$=$\binom{x_1}{x_2}$
+
+
+Note that ($\star$) looks similar to the linear equation in the case of $R \to R$
+
+
+
+$\bullet$ In general, $R^{n} \to R^{m}$  a matrix  $\begin{pmatrix} A_{mxn}\end{pmatrix}$  - reprezents linear transformation.
+
+
+$\bullet$ Viewing matrices as linear transformations can help understand, e.g., seemingly strange definition of a product of matrices as well as:
+
+
+
+
+                          
+                            
+
+
 
