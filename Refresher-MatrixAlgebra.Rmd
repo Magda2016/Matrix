@@ -1,0 +1,29 @@
+---
+title: "Matrix Algebra - Refresher"
+author: "T. Markaryan"
+date: "May 11, 2016"
+output: 
+  pdf_document:
+    includes:
+      in_header: MatrixLatexLibraries.sty
+---
+
+A special value of matrices and Matrix Algebra is that they nable to express many operations arising in mathematics, statistics and many other fields in a clear concise manner. Matrices also enhance the understanding of which apsects generalize to higher dimensions.
+
+
+###Matrices and Transformations
+
+####$R \to R$ 
+
+$$y=ax$$
+
+A single number $a$ represents linear transformation.
+
+####$R^2 \to R$ 
+
+$$y=a_1x_1+a_2x_2$$
+
+Vector $\mathbf{A}=(a_1, a_2)$ represents linear transformation.
+
+####$R^2 \to R^2$ 
+
