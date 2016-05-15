@@ -1,4 +1,20 @@
 \usepackage{bbm}
 \usepackage{threeparttable}
 \usepackage{booktabs}
+\usepackage{lipsum}
+\usepackage{tcolorbox}
 \newcommand{\vect}[1]{\boldsymbol{#1}}
+
+\newtcolorbox{pression}[2][]{enhanced,title=My title,
+attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},attach boxed title to top left={xshift=1cm,yshift=-2mm},
+boxed title style={size=small,colupper=black},
+title={#2},#1}
+
+\tcbuselibrary{skins}
+\usetikzlibrary{shadings}
+\tcbset{
+    skin=enhanced,
+    fonttitle=\bfseries,
+    interior style={white},
+    segmentation style={black,solid,opacity=0.2,line width=1pt}
+}
