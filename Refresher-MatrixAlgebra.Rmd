@@ -32,31 +32,40 @@ $$\begin{cases} y_1 = a_{11}x_1 + a_{12}x_2\\ y_2 = a_{21}x_1 + a_{22}x_2 \end{c
 
 Matrix  $\begin{pmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{pmatrix}$ represents linear transformation.
 
-$\bullet$ Q: What Matrix corresponds to a linear mapping
+\begin{tcolorbox}[colback=yellow!5,colframe=yellow!40!black,title=Questions]
+1. What matrix corresponds to a linear mapping?
 
-####$R^{10} \to R^{20}$ ?             
+2. What matrix corresponds to a linear maping $R^{10} \to R^{20}?$
+\end{tcolorbox}
 
-$\bullet$ Thus, for linear mappings:
+Thus, for linear mappings:
 
+- $R \to R$  | given by numbers
 
-####$R \to R$  | given by numbers
-
-####$R^{n} \to R^{m}$  | given by matrices
-
-
-$\bullet$ So, we can write compactly
-
-($\star$)  $\underline{y}$=A$\underline{x}$ ; $\underline{y}$=$\binom{y_1}{y_2}$,  A = $\begin{pmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{pmatrix}$ , $\underline{x}$=$\binom{x_1}{x_2}$
+- $R^{n} \to R^{m}$  | given by matrices
 
 
-Note that ($\star$) looks similar to the linear equation in the case of $R \to R$
+So, we can write compactly
+
+ \begin{equation}\label{eqn:matrix}\underline{y}=A\underline{x}\end{equation}
+ 
+ where
+ 
+ $$\underline{y}=\binom{y_1}{y_2},  A = \begin{pmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{pmatrix} , \underline{x}=\binom{x_1}{x_2}$$
 
 
+Note that equation \eqref{eqn:matrix} looks similar to the linear equation in the case of $R \to R$
 
-$\bullet$ In general, $R^{n} \to R^{m}$  a matrix  $\begin{pmatrix} A_{mxn}\end{pmatrix}$  - reprezents linear transformation.
+In general, for transformation $R^{n} \to R^{m}$, a matrix  $$\begin{pmatrix}A\end{pmatrix}_{m*n}$$ reprezents a linear transformation. 
 
+Viewing matrices as linear transformations can help understand, seemingly strange definition of a product of matrices as well as:
 
-$\bullet$ Viewing matrices as linear transformations can help understand, e.g., seemingly strange definition of a product of matrices as well as:
+- Addition of matrices
+
+- Multiplication by a scalar
+
+- Inverse 
+
 
 
 
