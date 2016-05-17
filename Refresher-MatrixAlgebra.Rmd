@@ -11,7 +11,7 @@ output:
 A special value of matrices and Matrix Algebra is that they nable to express many operations arising in mathematics, statistics and many other fields in a clear concise manner. Matrices also enhance the understanding of which apsects generalize to higher dimensions.
 
 
-###Matrices and Transformations
+##1. Matrices as Transformations
 
 ####$R \to R$ 
 
@@ -68,6 +68,103 @@ Viewing matrices as linear transformations can help understand, seemingly strang
 
 
 
+
+##2. Notation and Definitions\
+
+
+
+\begin{tcolorbox}[colback=green!5,colframe=red!40!black,title=Definition]
+A matrix is an $m*n$ array of numbers with  $\underline{m}$ rows and  $\underline{n}$ columns.
+\end{tcolorbox}
+\    
+
+
+
+Matrices are usually denoted by capital's: A,B, C...
+
+
+Generic elemment of matrix is written as:
+
+$$\begin{pmatrix}A\end{pmatrix}_{ij}$$  where  $i=1,...,m ; j=1,...n$
+\
+
+
+
+
+
+
+Examples of Matrices:
+
+  - $\mathbf{1x1}$ marix is a $\underline{scalar}$
+  
+  - $\mathbf{nx1}$ marix is a $\underline{column vector}$
+  
+  - $\mathbf{1xn}$ marix is a $\underline{row vector}$
+  
+  - $\mathbf{nxn}$ marix is a $\underline{square matrix}$
+
+
+We denote column vectors by $a, b, z...$ and to emphasize that they are vectors we use:\
+
+$\underline{a}, \underline{b}, \underline{z}$.\
+
+
+
+
+
+
+$\mathbf{Equality}$ of matrices: $A=B$ 
+
+  - They are the same size
+  - $A_{ij}=B_{ij}$
+  
+  
+$\mathbf{Transpose}$ of matrix:
+
+   - If $A$ is a $m*n$ matrix, then $(A')_{ij}$ = $(A)_{ij}$ is a $n$x$m$ matrix.
+\
+
+
+Examples of transpose will be provide.\
+
+
+
+$\mathbf{Symmetric}$ $A'=B$ \
+
+
+
+
+
+##3. Matrices as Transformations
+
+
+####Addition of Matrices\
+
+
+
+
+
+\begin{tcolorbox}[colback=green!5,colframe=red!40!black,title=Definition]
+If $A$ and $B$ are $mxn$ matrices then $C=A+B$ is defined as elementwise addition.
+
+$(C)_{ij}$ = $(A)_{ij}$ + $(B)_{ij}$ 	   $\forall$            ${i,j}$
+\end{tcolorbox}
+\  
+
+
+
+
+
+$\mathbf{Examples}$ \
+
+
+
+
+
+
+
+
+    
 
 
                           
