@@ -11,7 +11,7 @@ output:
 A special value of matrices and Matrix Algebra is that they nable to express many operations arising in mathematics, statistics and many other fields in a clear concise manner. Matrices also enhance the understanding of which apsects generalize to higher dimensions.
 
 
-##1. Matrices as Transformations
+#1. Matrices as Transformations
 
 ####$R \to R$ 
 
@@ -69,7 +69,7 @@ Viewing matrices as linear transformations can help understand, seemingly strang
 
 
 
-##2. Notation and Definitions\
+#2. Notation and Definitions\
 
 
 
@@ -135,7 +135,7 @@ $\mathbf{Symmetric}$ $A'=B$ \
 
 
 
-##3. Matrices as Transformations
+#3. Matrices as Transformations
 
 
 ####Addition of Matrices\
@@ -156,6 +156,108 @@ $(C)_{ij}$ = $(A)_{ij}$ + $(B)_{ij}$ 	   $\forall$            ${i,j}$
 
 
 $\mathbf{Examples}$ \
+
+
+
+
+a) A= $\begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$ 
+  B= $\begin{pmatrix} -1 & 1 \\ 1 & -4 \end{pmatrix}$;
+  A+B=$\begin{pmatrix} 1+(-1) & 2+1 \\ 3+1 & 4+(-4) \end{pmatrix}$
+  \
+  
+  
+  
+  
+  
+  
+  
+  b)  A= $\begin{pmatrix} 1 & 3 & 5 \\ 2 & 4 & 6\end{pmatrix}$ 
+      B= $\begin{pmatrix} -1 & -3 & -5 \\ -2 & -4 & -6\end{pmatrix}$; A+B=$\begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & 0\end{pmatrix}$\
+      
+      
+      
+      
+      
+$\textbf{Additive Identities }$\
+
+
+
+
+
+
+
+Matrix  $O_{mxn}$  consisting of all $O's$ is called $\textbf{Null Matrix}$ and serves as the additive identitiy.\
+
+
+
+
+$$A_{mxn}+O_{mxn}=A_{mxn}$$\
+
+
+
+-> $\text{\textit{Note: There is an additive identity for each size}}$\
+
+
+
+
+
+
+$\textbf{Properties of Matrix Addition}$\
+
+
+
+
+
+- Commutative: A+B = B+A\
+
+- Associative: A+(B+C) = (A+B)+C     $\text{\textit{Why?}}$\
+
+- Multiplication by a scallar: If $A = A_{ixj}$ then $B=cA=(c*A_{ixj})$
+
+EXAMPLE:\
+
+
+
+
+
+
+
+4*$\begin{pmatrix} 1 & 0 & -1 \\ 2 & 1 & 4\end{pmatrix}$ = $\begin{pmatrix} 4 & 0 & -4 \\ 8 & 4 & 16\end{pmatrix}$\
+
+
+
+
+#4. Multiplication of Matrices\
+
+
+
+Matrix multiplication may first seem unnatural or strange, but viewing it as a $\textbf{composition}$ of two linear maps makes it completelly clear.\
+
+
+EXAMPLE:
+
+  - One-dimenssional case
+  
+  $$\mathbbm{R}\xrightarrow{--1--}\mathbbm{R}\xrightarrow{--2--}\mathbbm{R}$$
+  $$\overrightarrow{---3---}$$\
+  
+  
+  1: $y=\alpha*x$\
+  
+  2:  $\zeta=\beta*y$\
+  
+  3:$\zeta=\beta*\alpha*x$
+  
+  
+
+  
+
+    
+ 
+
+
+
+
 
 
 
