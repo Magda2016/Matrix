@@ -208,9 +208,9 @@ $\textbf{Properties of Matrix Addition}$\
 
 
 
-- Commutative: A+B = B+A\
+- Commutative: $A+B = B+A$\
 
-- Associative: A+(B+C) = (A+B)+C     $\text{\textit{Why?}}$\
+- Associative: $A+(B+C) = (A+B)+C$    $\text{\textit{Why?}}$\
 
 - Multiplication by a scallar: If $A = A_{ixj}$ then $B=cA=(c*A_{ixj})$
 
@@ -236,7 +236,7 @@ Matrix multiplication may first seem unnatural or strange, but viewing it as a $
 
 EXAMPLE:
 
-  - One-dimenssional case
+  - One-dimensional case
   
   $$\mathbbm{R}\xrightarrow{--1--}\mathbbm{R}\xrightarrow{--2--}\mathbbm{R}$$
   $$\overrightarrow{---3---}$$\
@@ -247,6 +247,59 @@ EXAMPLE:
   2:  $\zeta=\beta*y$\
   
   3:$\zeta=\beta*\alpha*x$
+  
+  
+  
+  
+   -  $\mathbbm{R^2}$  case
+   
+   
+  
+  $$\mathbbm{R^2}\xrightarrow{--1--}\mathbbm{R^2}\xrightarrow{--2--}\mathbbm{R^2}$$
+  $$\overrightarrow{---3---}$$\
+  
+  
+  1:$\begin{cases} y_1 = x_1 + x_2\\ y_2 = x_1 - x_2 \end{cases}$\
+  
+  and, 
+  
+  \begin{equation}\label{eqn:matrix}\underline{y}=A\underline{x}\end{equation}
+  
+   $$A = \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}$$
+  
+  
+  
+  2:  $\begin{cases} \zeta_1= y_1 + 2y_2\\ \zeta_2 = y_1 - y_2 \end{cases}$\
+  
+  
+  
+  and,
+  
+  \begin{equation}\label{eqn:matrix}\underline{\zeta}=B\underline{y}\end{equation}
+  
+   $$B = \begin{pmatrix} 1 & 2 \\ 1 & -1 \end{pmatrix}$$\
+   
+   
+   
+  
+  3:$\begin{cases} \zeta_1= x_1 + x_2 + 2x_1 - 2x_2 \\ \zeta_2 = x_1 + x_2 - x_1 + x_2 \end{cases}$ 	$\Longleftrightarrow$   $\begin{cases} \zeta_1= 3x_1 - x_2\\ \zeta_2 = 2x_2 \end{cases}$\
+  
+  
+  thus, 
+  
+  
+  
+  \begin{equation}\label{eqn:matrix}\underline{\zeta}=C\underline{x}\end{equation}
+  
+   $$C = \begin{pmatrix} 3 & -1 \\ 0 & 2 \end{pmatrix}$$\
+   
+   
+So it is natural to define $BA=C$, and we can easily verify that:
+
+ $$BA = \begin{pmatrix} 1 & 2 \\ 1 & -1 \end{pmatrix}\begin{pmatrix} 1 & 1\\ 1 & -1 \end{pmatrix}=\begin{pmatrix} 3 & -1 \\ 0 & 2 \end{pmatrix}$$
+   
+   
+  
   
   
 
