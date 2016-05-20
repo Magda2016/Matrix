@@ -214,7 +214,7 @@ $\textbf{Properties of Matrix Addition}$\
 
 - Multiplication by a scallar: If $A = A_{ixj}$ then $B=cA=(c*A_{ixj})$
 
-EXAMPLE:\
+$\mathbf{Example}$ \
 
 
 
@@ -234,7 +234,7 @@ EXAMPLE:\
 Matrix multiplication may first seem unnatural or strange, but viewing it as a $\textbf{composition}$ of two linear maps makes it completelly clear.\
 
 
-EXAMPLE:
+$\mathbf{Example}$ \
 
   - One-dimensional case
   
@@ -296,8 +296,83 @@ EXAMPLE:
    
 So it is natural to define $BA=C$, and we can easily verify that:
 
- $$BA = \begin{pmatrix} 1 & 2 \\ 1 & -1 \end{pmatrix}\begin{pmatrix} 1 & 1\\ 1 & -1 \end{pmatrix}=\begin{pmatrix} 3 & -1 \\ 0 & 2 \end{pmatrix}$$
+ $$BA = \begin{pmatrix} 1 & 2 \\ 1 & -1 \end{pmatrix}\begin{pmatrix} 1 & 1\\ 1 & -1 \end{pmatrix}=\begin{pmatrix} 3 & -1 \\ 0 & 2 \end{pmatrix}$$\
+ 
+ 
+ 
+ Identifying multiplication as a composition should make it natural that matrix mulitplication is only defined for matrices:\
+ 
+ 
+ $$\begin{pmatrix}A\end{pmatrix}_{m*n} \begin{pmatrix}B\end{pmatrix}_{n*p}$$
+ 
+ $$n=m$$\
+ 
+ -> Dimensions must conform before $A*B$ can be defined.\
+ 
+   $$\mathbbm{R_p}\xrightarrow{--B--}\mathbbm{R_n}\xrightarrow{--A--}\mathbbm{R_m}$$
+  $$\overrightarrow{---AB---}$$\
+  
+  
+  \begin{tcolorbox}[colback=green!5,colframe=red!40!black,title=Definition]
+Let $\begin{pmatrix}A\end{pmatrix}_{m*n}$ and $\begin{pmatrix}B\end{pmatrix}_{n*p}$  then $C=AB$ is defined
+as $\begin{pmatrix}C\end{pmatrix}_{i*j} = \sum\limits_{k=1}^n \mathcal A_{ik}B_{kj}$ ; i=1,...,m; j=1,...,p
+\end{tcolorbox}
+\ 
+
+
+
+$\mathbf{Examples}$ \
+
+
+a)  $\begin{pmatrix} 3 & 1 & 10 \\ 2 & 2 & 8 \end{pmatrix}$ 
+   $\begin{pmatrix} 60 \\ 80 \\ 40 \end{pmatrix}$ = $\begin{pmatrix} 660 \\ 600  \end{pmatrix}$\
    
+   
+   
+  -> The matrices are represented by the dimensions as follows: 2x3, 3x1 and 2x1.
+  \
+  
+  
+b)  $\begin{pmatrix} 1 & 2 \\ 3 & 4  \end{pmatrix}$ 
+   $\begin{pmatrix} 0 & -1 \\ 1 & -1  \end{pmatrix}$ = $\begin{pmatrix} 2 & -3 \\ 4 & -7  \end{pmatrix}$\
+   
+   
+   
+  -> The matrices are represented by the dimensions as follows: 2x2, 2x2 and 2x2.
+  \
+  
+    
+c)  $\begin{pmatrix} 0 & -1 \\ 1 & -1  \end{pmatrix}$ 
+   $\begin{pmatrix} 1 & 2 \\ 3 & 4  \end{pmatrix}$ = $\begin{pmatrix} -3 & -4 \\ -2 & -2  \end{pmatrix}$\
+   
+   
+   
+d)  Inner Product\
+
+      $\begin{pmatrix} 2 & 2 & 8 \end{pmatrix}$ 
+   $\begin{pmatrix} 50 \\ 100 \\ 30  \end{pmatrix}$ = $540$\
+   
+-> The matrices are represented by the dimensions as follows: 1x3, 3x1 and 1x1.
+  \
+  
+  
+More generally, if $\begin{pmatrix} x_i \\ .\\ .\\.\\x_n  \end{pmatrix}$ $\begin{pmatrix} y_i \\ .\\ .\\.\\y_n  \end{pmatrix}$,  then  $X'Y=Y'X = \sum\limits_{i=1}^n \mathcal X_{i}Y_{i}$
+
+
+e)  Outer Product\
+
+
+    $\begin{pmatrix} 50 \\ 100 \\ 30  \end{pmatrix}$ $\begin{pmatrix} 2 & 2 & 8 \end{pmatrix}$ = $\begin{pmatrix} 100 & 100 & 400 \\ 200 & 200 & 800 \\ 60 & 60 & 240 \end{pmatrix}$\
+   
+   
+   
+   
+-> The matrices are represented by the dimensions as follows: 3x1, 1x3 and 3x3.
+  \
+ 
+ 
+ 
+-> $\text{\textit{Note: a)}}$\
    
   
   
