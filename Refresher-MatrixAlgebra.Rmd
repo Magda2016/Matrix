@@ -432,10 +432,28 @@ $\begin{pmatrix} x_1 & x_2 \end{pmatrix}$
                                   
                                   
                                   
-  -In 1-dimensional case: $x*a*x = ax^2$ & $\frac{d}{dx}(x*a*x)=2ax$\
+  -In 1-dimensional case: $x*a*x = ax^2$ & $\frac{d}{dx}(xax)=2ax$\
 
 
-  -In higher dimensions: $\frac{d}{dx}(\underline{x'}*A*\underline{x})=2A\underline{x}$ -> $\text{\textit{Show it!}}$\
+  -In higher dimensions: $\frac{d}{dx}(\underline{x'}A\underline{x})=2A\underline{x}$ -> $\text{\textit{Show it!}}$\
+  
+  
+  
+  - DEFINITE AND SEMI-DEFINITE MATRICES\
+  
+  
+  
+  \begin{tcolorbox}[colback=green!5,colframe=red!40!black,title=Definition]
+A symmetric matrix $\underline{A}$ is said to be $\textbf{positive definite}$ if $\underline{x'}A\underline{x}$  $>$ for all $\underline{x}\neq0$
+
+
+
+\end{tcolorbox}\
+
+
+
+
+ 
   
   
 
