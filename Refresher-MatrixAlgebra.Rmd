@@ -628,6 +628,18 @@ $A=\begin{pmatrix} 1 & 2 & 1\\ 0 & 4 & 3 \\ 3 & 6 & 0\end{pmatrix}$, $b=\begin{p
  
 ####Linear Independence\
 
+- Two vectors of same size:\
+
+$a=\begin{pmatrix} a_1 \\ .\\ .\\.\\a_n  \end{pmatrix}$ & $b=\begin{pmatrix} b_1 \\ .\\ .\\.\\b_n  \end{pmatrix}$\
+
+
+Are called $\textbf{LINEARLY INDEPENDENT}$ if for $\forall$   $\lambda_1$, $\lambda_2$, $\in$ $R$ siti $\lambda^{2}_1 + \lambda^{2}_2 > 0$
+
+
+
+
+
+
 
  
            
