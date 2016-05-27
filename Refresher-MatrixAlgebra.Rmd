@@ -692,6 +692,117 @@ $\begin{pmatrix}  0\\ 3\\2 \end{pmatrix}$,  $\begin{pmatrix}  1\\ -1\\-3 \end{pm
 ####RANK OF MATRIX\
 
 
+  
+  
+  
+  \begin{tcolorbox}[colback=green!5,colframe=red!40!black,title=Definition]
+Rank of a matrix is the largest number of Linear Independent or Rows. 
+
+
+
+\end{tcolorbox}\
+
+
+  
+  \begin{tcolorbox}[colback=green!5,colframe=red!40!black,title=Definition]
+A square matrix $A_{nxn}$ is called $\textbf{Full-Rank}$ if rank $(A)=n$.
+
+
+
+\end{tcolorbox}
+\
+
+
+
+
+Full rank square matrices have inverses ..... is also true.
+
+
+####EXAMPLE(REVISIT)\
+
+$$A=\begin{pmatrix} 1 & 3 \\ 2 & 6 \end{pmatrix}$$
+
+
+-> $\text{\textit{Note that column linearly dependent.}}$\
+
+$-3*\begin{pmatrix} 1  \\ 2 \end{pmatrix} + 1*\begin{pmatrix} 3  \\ 6 \end{pmatrix}$ = 0\
+
+
+
+  \begin{tcolorbox}[colback=green!5,colframe=blue!40!black,title=Theorem]
+If A is non-singular then Rank(AB)=Rank(B)=Rank(BA). 
+
+
+
+\end{tcolorbox}
+\
+
+
+
+#6. Determinant of a  Matrix\
+
+
+  -You may remember determinants from your linear algebra courses mean applying $\textbf{Crame's Rule }$ to solving $\textbf{systems of linear equations}$, also $\textbf{Jacobians}$.
+  
+  
+  -Determinants are defined for $\textbf{square matrices}$.
+  
+  -Geometrically, the absolute value of determinant is the volume of the parallelpiped spanned by its column vectors.
+  
+  -The determinant of matrix $A$ is denoted by $|A|$.
+  
+  -The determinant of a 2x2 is $\begin{pmatrix} a & b \\ c & d \end{pmatrix}$=$ad-bc$
+  
+  -Direct calculation of determinants for matrices of larger sizes is combersome and usually some decomposition method is used. Calculating 3x3 is still ok:\
+  
+  $$\begin{pmatrix} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23}\\a_{31} & a_{32} & a_{33} \end{pmatrix}=a_{11}a_{22}a_{33}+a_{21}a_{32}a_{13}+a_{12}a_{23}a_{31}-a_{13}a_{22}a_{31}-a_{12}a_{21}a_{33}-a_{11}a_{32}a_{23}$$ \
+  
+  
+####PROPERTIES OF DETERMINANT\
+
+a) $|A|=|A'|$
+
+b)  $|AB|=|A||B|$
+
+c) $|A|=0$ <=> $A$ is singular
+
+d)  If $\exists A^{-1}$ then $|A'|$=$\frac{1}{|A|}$
+
+e) $|kA|= k^{n}|A|$, if $A_{nxn}$
+
+f) Interchanging 2 rows (columns) changes the sign of determinant.
+
+g) Multiplying of an entire row (column) by a constant multiplies the determimant by that constant.
+
+h) Adding a scalar multiple of one row (column) to another row (column) does not change the value of the determinant.
+
+i) If matrix is triangular , determinant is a product of diagonal elements.
+
+
+####EXAMPLE\
+
+ 
+
+  1. A=$\begin{pmatrix} 1 & 2 \\ 1 & d-1 \end{pmatrix}$, then $|A|$ = $1*(-1)-1*2=-1-2=-3$\
+  
+  
+  2. $\begin{pmatrix} 1 & 2 \\ 1 & d-1 \end{pmatrix}$ = $1*2-1*(-1)=3$  -->(f)\
+  
+  3. 
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
