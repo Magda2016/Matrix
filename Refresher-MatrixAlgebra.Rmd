@@ -633,7 +633,64 @@ $A=\begin{pmatrix} 1 & 2 & 1\\ 0 & 4 & 3 \\ 3 & 6 & 0\end{pmatrix}$, $b=\begin{p
 $a=\begin{pmatrix} a_1 \\ .\\ .\\.\\a_n  \end{pmatrix}$ & $b=\begin{pmatrix} b_1 \\ .\\ .\\.\\b_n  \end{pmatrix}$\
 
 
-Are called $\textbf{LINEARLY INDEPENDENT}$ if for $\forall$   $\lambda_1$, $\lambda_2$, $\in$ $R$ siti $\lambda^{2}_1 + \lambda^{2}_2 > 0$
+Are called $\textbf{LINEARLY INDEPENDENT}$ if for $\forall$   $\lambda_1$, $\lambda_2$, $\in$ $R$ siti $\lambda^{2}_1 + \lambda^{2}_2 > 0$\
+
+$$\lambda_1a + \lambda_2b \neq \underline{0}$$, \
+
+
+Otherwise there are called $\textbf{LINEARLY DEPENDENT}$.\
+
+
+
+####EXAMPLES\
+
+
+a) $a=\begin{pmatrix}  1\\ 2 \end{pmatrix}$ and $b=\begin{pmatrix}  4\\ 8 \end{pmatrix}$ --> Ale Linearly Dependent\
+
+choose $\lambda_1 = -4$ & $\lambda_2 = 1$\
+
+
+b) $a=\begin{pmatrix}  1\\ 0 \end{pmatrix}$ and $b=\begin{pmatrix}  0\\ 1 \end{pmatrix}$ --> Ale Linearly Independent\
+
+choose $\lambda_1a +\lambda_2b= 0$\
+
+$$<=>$$
+
+$$\begin{cases} \lambda_1= 0\\ \lambda_2 = 0 \end{cases}$$\
+
+
+The concept extends to .... $\forall$ number of vectors.
+\
+
+
+
+
+
+
+
+Set of vectors $\underline{x_1},...\underline{x_i}$,  for  $\underline{x_i} \in$ $R^{n}$\
+
+
+is called $\textbf{LINEARLY INDEPENDENT}$ if for $\forall$  $\lambda_1,...,\lambda_p$ $\in$ R, $\lambda^2_1+\lambda^2_2+\lambda^2_3+...+\lambda^2_p > 0$\
+
+
+$$\sum\limits_{k=1}^p \lambda_k \underline{x_k} \neq \underline{0}$$
+
+
+Otherwise , they are linearly dependent.\
+
+
+####EXAMPLE\
+
+The Vectors:\
+
+$\begin{pmatrix}  0\\ 3\\2 \end{pmatrix}$,  $\begin{pmatrix}  1\\ -1\\-3 \end{pmatrix}$ , $\begin{pmatrix}  2\\ 2\\-1 \end{pmatrix}$ and  $\begin{pmatrix}  1\\ 13\\11 \end{pmatrix}$ are Linearly Dependent.
+
+
+
+
+####RANK OF MATRIX\
+
 
 
 
