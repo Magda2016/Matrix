@@ -240,8 +240,20 @@ $\mathbf{Example}$ \
 
   - One-dimensional case
   
-  $$\mathbbm{R}\xrightarrow{--1--}\mathbbm{R}\xrightarrow{--2--}\mathbbm{R}$$
-  $$\overrightarrow{---3---}$$\
+
+  
+  \begin{center}
+    \begin{tikzpicture}
+      \SetGraphUnit{3}
+      \Vertex[L=R]{B}
+      \WE[L=R](B){A}
+      \EA[L=R](B){C}
+      \Edge[label = I](A)(B)
+      \Edge[label = II](B)(C)
+      \tikzset{EdgeStyle/.append style = {bend left = 50}}
+      \Edge[label = III](A)(C)
+    \end{tikzpicture}
+  \end{center}
   
   
   1: $y=\alpha*x$\
