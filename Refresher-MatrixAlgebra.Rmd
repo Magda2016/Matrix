@@ -4,6 +4,8 @@ author: "T. Markaryan"
 date: "May 11, 2016"
 output: 
   pdf_document:
+    fig_caption: true
+    keep_tex: true
     includes:
       in_header: MatrixLatexLibraries.sty
 ---
@@ -813,7 +815,7 @@ i) If matrix is triangular , determinant is a product of diagonal elements.
 #7. PATRITIONED MATRICES\
 
 
-We can partition matrices into blocks.\
+We can partition matrices into $\textbf{blocks}$.\
 
 
 ####EXAMPLE\
@@ -821,7 +823,39 @@ We can partition matrices into blocks.\
 
 
 
-$A=\left[\begin{array}{c|c}A_{11} & A_{12} \\ \hline A_{21} & A_{22} \end{array} \right]$
+$A=\left[\begin{array}{c|c}\begin{matrix} 1 & 2 \\ 3 & 6 \end{matrix} & \begin{matrix} 0 & 4 \\ 8 & 0 \end{matrix} \\ \hline \begin{matrix} 1 & 2 \end{matrix} & \begin{matrix} 0 & 1\end{matrix} \end{array} \right]=\left[\begin{array}{c|c}A_{11} & A_{12} \\ \hline A_{21} & A_{22} \end{array} \right]$
+
+
+$A_{11}=\begin{pmatrix} 1 & 2 \\ 3 & 6 \end{pmatrix}$, $A_{12}=\begin{pmatrix} 0 & 4 \\ 8 & 0 \end{pmatrix}$, $A_{21}= \begin{pmatrix} 1 & 2\end{pmatrix}$, $A_{22}= \begin{pmatrix} 0 & 1\end{pmatrix}$\
+
+
+As long as dimensions conform, matrix addition , multiplication, transposition work the same way. That is the power of PARTITIONING.\
+
+
+
+####EXAMPLE\
+
+
+$\underline{b}=\left[\begin{array}{c|c} 2 \\ 0 \\ \hline -1 \\ 2 \end{array}\right]$ =
+$\begin{pmatrix} b_1 \\ b_2\end{pmatrix}$\
+
+
+Let's do multiplication with partitioned matrices:\
+
+
+
+$A\underline{b}=\left[\begin{array}{c|c}A_{11} & A_{12} \\ \hline A_{21} & A_{22} \end{array} \right]\begin{pmatrix} b_1 \\ b_2\end{pmatrix}$ = $\begin{pmatrix} A_{11}b_1 +  A_{12}b_2\\ A_{21}b_1 +  A_{22}b_2\end{pmatrix}$, where:\
+
+
+
+$A_{11}b_1=\begin{pmatrix} 2 \\ 6\end{pmatrix}$ ; $A_{12}b_2=\begin{pmatrix} 8 \\ -8\end{pmatrix}$ ; $A_{21}b_1=(2)$;  $A_{22}b_2=(2)$; \
+
+So: $AB = \begin{pmatrix} 10 \\ -2 \\ 4\end{pmatrix}$\
+
+Of course we get the same answer by performing multiplication on original matrices. (DO IT!)
+
+
+
 
 
   
