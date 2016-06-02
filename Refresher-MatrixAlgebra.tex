@@ -1,0 +1,969 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+  \newcommand{\euro}{€}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\PassOptionsToPackage{usenames,dvipsnames}{color} % color is loaded by hyperref
+\hypersetup{unicode=true,
+            pdftitle={Matrix Algebra - Refresher},
+            pdfauthor={T. Markaryan},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+  \title{Matrix Algebra - Refresher}
+  \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+  \author{T. Markaryan}
+  \preauthor{\centering\large\emph}
+  \postauthor{\par}
+  \predate{\centering\large\emph}
+  \postdate{\par}
+  \date{May 11, 2016}
+
+
+\usepackage{bbm}
+\usepackage{threeparttable}
+\usepackage{booktabs}
+\usepackage{lipsum}
+\usepackage{tcolorbox}
+\usepackage{tkz-graph}
+\newcommand{\vect}[1]{\boldsymbol{#1}}
+
+\newtcolorbox{pression}[2][]{enhanced,title=My title,
+attach boxed title to top center={yshift=-3mm,yshifttext=-1mm},attach boxed title to top left={xshift=1cm,yshift=-2mm},
+boxed title style={size=small,colupper=black},
+title={#2},#1}
+
+\tcbuselibrary{skins}
+\usetikzlibrary{shadings}
+\tcbset{
+    skin=enhanced,
+    fonttitle=\bfseries,
+    interior style={white},
+    segmentation style={black,solid,opacity=0.2,line width=1pt}
+}
+
+\GraphInit[vstyle = Shade]
+\tikzset{
+  LabelStyle/.style = { rectangle, rounded corners, draw,
+                        minimum width = 2em, fill = green!30,
+                        text = red, font = \bfseries },
+  VertexStyle/.append style = { inner sep=3pt,
+                                font = \Large\bfseries},
+  EdgeStyle/.append style = {->, bend left} }
+\thispagestyle{empty}
+
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+\begin{document}
+\maketitle
+
+A special value of matrices and Matrix Algebra is that they nable to
+express many operations arising in mathematics, statistics and many
+other fields in a clear concise manner. Matrices also enhance the
+understanding of which apsects generalize to higher dimensions.
+
+\section{1. Matrices as
+Transformations}\label{matrices-as-transformations}
+
+\paragraph{\texorpdfstring{\(R \to R\)}{R \textbackslash{}to R}}\label{r-to-r}
+
+\[y=ax\]
+
+A single number \(\underline{a}\) represents linear transformation.
+
+\paragraph{\texorpdfstring{\(R^2 \to R\)}{R\^{}2 \textbackslash{}to R}}\label{r2-to-r}
+
+\[y=a_1x_1+a_2x_2\]
+
+Vector \(\mathbf{A}=(a_1, a_2)\) represents linear transformation.
+
+\paragraph{\texorpdfstring{\(R^2 \to R^2\)}{R\^{}2 \textbackslash{}to R\^{}2}}\label{r2-to-r2}
+
+\[\begin{cases} y_1 = a_{11}x_1 + a_{12}x_2\\ y_2 = a_{21}x_1 + a_{22}x_2 \end{cases}\]
+
+Matrix
+\(\begin{pmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{pmatrix}\)
+represents linear transformation.
+
+\begin{tcolorbox}[colback=yellow!5,colframe=yellow!40!black,title=Questions]
+1. What matrix corresponds to a linear mapping?
+
+2. What matrix corresponds to a linear maping $R^{10} \to R^{20}?$
+\end{tcolorbox}
+
+Thus, for linear mappings:
+
+\begin{itemize}
+\item
+  \(R \to R\) \textbar{} given by numbers
+\item
+  \(R^{n} \to R^{m}\) \textbar{} given by matrices
+\end{itemize}
+
+So, we can write compactly
+
+\begin{equation}\label{eqn:matrix}\underline{y}=A\underline{x}\end{equation}
+
+where
+
+\[\underline{y}=\binom{y_1}{y_2},  A = \begin{pmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \end{pmatrix} , \underline{x}=\binom{x_1}{x_2}\]
+
+Note that equation \eqref{eqn:matrix} looks similar to the linear
+equation in the case of \(R \to R\)
+
+In general, for transformation \(R^{n} \to R^{m}\), a matrix
+\[\begin{pmatrix}A\end{pmatrix}_{m*n}\] reprezents a linear
+transformation.
+
+Viewing matrices as linear transformations can help understand,
+seemingly strange definition of a product of matrices as well as:
+
+\begin{itemize}
+\item
+  Addition of matrices
+\item
+  Multiplication by a scalar
+\item
+  Inverse
+\end{itemize}
+
+\section{\texorpdfstring{2. Notation and Definitions\\
+}{2. Notation and Definitions }}\label{notation-and-definitions}
+
+\begin{tcolorbox}[colback=green!5,colframe=red!40!black,title=Definition]
+A matrix is an $m*n$ array of numbers with  $\underline{m}$ rows and  $\underline{n}$ columns.
+\end{tcolorbox}
+
+~
+
+Matrices are usually denoted by capital's: A,B, C\ldots{}
+
+Generic elemment of matrix is written as:
+
+\begin{center}
+$\begin{pmatrix}A\end{pmatrix}_{ij}$ or $a_{ij}$, where  $i=1,...,m ; j=1,...n$
+\end{center}
+
+Examples of Matrices:
+
+\begin{itemize}
+\item
+  \(\mathbf{1x1}\) marix is a \(\underline{scalar}\)
+\item
+  \(\mathbf{nx1}\) marix is a \(\underline{column vector}\)
+\item
+  \(\mathbf{1xn}\) marix is a \(\underline{row vector}\)
+\item
+  \(\mathbf{nxn}\) marix is a \(\underline{square matrix}\)
+\end{itemize}
+
+We denote column vectors by \(a, b, z...\) and to emphasize that they
+are vectors we use:\\
+ \(\underline{a}, \underline{b}, \underline{z}\).\\
+
+\(\mathbf{Equality}\) of matrices: \(A=B\)
+
+\begin{itemize}
+\tightlist
+\item
+  They are the same size
+\item
+  \(A_{ij}=B_{ij}\)
+\end{itemize}
+
+\(\mathbf{Transpose}\) of matrix:
+
+\begin{itemize}
+\tightlist
+\item
+  If \(A\) is a \(m*n\) matrix, then \((A')_{ij}\) = \((A)_{ij}\) is a
+  \(n\)x\(m\) matrix.\\
+\end{itemize}
+
+Examples of transpose will be provide.\\
+
+\(\mathbf{Symmetric}\) \(A'=B\)\\
+
+\section{3. Matrices as
+Transformations}\label{matrices-as-transformations-1}
+
+\paragraph{\texorpdfstring{Addition of Matrices\\
+}{Addition of Matrices }}\label{addition-of-matrices}
+
+\begin{tcolorbox}[colback=green!5,colframe=red!40!black,title=Definition]
+If $A$ and $B$ are $mxn$ matrices then $C=A+B$ is defined as elementwise addition.
+
+$(C)_{ij}$ = $(A)_{ij}$ + $(B)_{ij}$       $\forall$            ${i,j}$
+\end{tcolorbox}
+
+~
+
+\(\mathbf{Examples}\)\\
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  A= \(\begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}\) B=
+  \(\begin{pmatrix} -1 & 1 \\ 1 & -4 \end{pmatrix}\);
+  A+B=\(\begin{pmatrix} 1+(-1) & 2+1 \\ 3+1 & 4+(-4) \end{pmatrix}\)\\
+\item
+  A= \(\begin{pmatrix} 1 & 3 & 5 \\ 2 & 4 & 6\end{pmatrix}\) B=
+  \(\begin{pmatrix} -1 & -3 & -5 \\ -2 & -4 & -6\end{pmatrix}\);
+  A+B=\(\begin{pmatrix} 0 & 0 & 0 \\ 0 & 0 & 0\end{pmatrix}\)\\
+\end{enumerate}
+
+\(\textbf{Additive Identities }\)\\
+
+Matrix \(O_{mxn}\) consisting of all \(O's\) is called
+\(\textbf{Null Matrix}\) and serves as the additive identitiy.\\
+
+\[A_{mxn}+O_{mxn}=A_{mxn}\]\\
+
+-\textgreater{}
+\(\text{\textit{Note: There is an additive identity for each size}}\)\\
+
+\(\textbf{Properties of Matrix Addition}\)\\
+
+\begin{itemize}
+\tightlist
+\item
+  Commutative: \(A+B = B+A\)\\
+\item
+  Associative: \(A+(B+C) = (A+B)+C\) \(\text{\textit{Why?}}\)\\
+\item
+  Multiplication by a scallar: If \(A = A_{ixj}\) then
+  \(B=cA=(c*A_{ixj})\)
+\end{itemize}
+
+\(\mathbf{Example}\)\\
+
+4*\(\begin{pmatrix} 1 & 0 & -1 \\ 2 & 1 & 4\end{pmatrix}\) =
+\(\begin{pmatrix} 4 & 0 & -4 \\ 8 & 4 & 16\end{pmatrix}\)\\
+
+\section{\texorpdfstring{4. Multiplication of Matrices\\
+}{4. Multiplication of Matrices }}\label{multiplication-of-matrices}
+
+Matrix multiplication may first seem unnatural or strange, but viewing
+it as a \(\textbf{composition}\) of two linear maps makes it completelly
+clear.\\
+
+\(\mathbf{Example}\)\\
+ - One-dimensional case
+
+\begin{center}
+    \begin{tikzpicture}
+      \SetGraphUnit{3}
+      \Vertex[L=R]{B}
+      \WE[L=R](B){A}
+      \EA[L=R](B){C}
+      \Edge[label = I](A)(B)
+      \Edge[label = II](B)(C)
+      \tikzset{EdgeStyle/.append style = {bend left = 50}}
+      \Edge[label = III](A)(C)
+    \end{tikzpicture}
+  \end{center}
+
+1: \(y=\alpha*x\)\\[2\baselineskip] 2:
+\(\zeta=\beta*y\)\\[2\baselineskip] 3:\(\zeta=\beta*\alpha*x\)
+
+\begin{itemize}
+\tightlist
+\item
+  \(\mathbbm{R^2}\) case
+\end{itemize}
+
+\[\mathbbm{R^2}\xrightarrow{--1--}\mathbbm{R^2}\xrightarrow{--2--}\mathbbm{R^2}\]
+\[\overrightarrow{---3---}\]\\
+
+1:\(\begin{cases} y_1 = x_1 + x_2\\ y_2 = x_1 - x_2 \end{cases}\)\\[2\baselineskip]
+and,
+
+\begin{equation}\label{eqn:matrix}\underline{y}=A\underline{x}\end{equation}
+
+\[A = \begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}\]
+
+2:
+\(\begin{cases} \zeta_1= y_1 + 2y_2\\ \zeta_2 = y_1 - y_2 \end{cases}\)\\
+
+and,
+
+\begin{equation}\label{eqn:matrix}\underline{\zeta}=B\underline{y}\end{equation}
+
+\[B = \begin{pmatrix} 1 & 2 \\ 1 & -1 \end{pmatrix}\]\\
+
+3:\(\begin{cases} \zeta_1= x_1 + x_2 + 2x_1 - 2x_2 \\ \zeta_2 = x_1 + x_2 - x_1 + x_2 \end{cases}\)
+\(\Longleftrightarrow\)
+\(\begin{cases} \zeta_1= 3x_1 - x_2\\ \zeta_2 = 2x_2 \end{cases}\)\\
+
+thus,
+
+\begin{equation}\label{eqn:matrix}\underline{\zeta}=C\underline{x}\end{equation}
+
+\[C = \begin{pmatrix} 3 & -1 \\ 0 & 2 \end{pmatrix}\]\\
+
+So it is natural to define \(BA=C\), and we can easily verify that:
+
+\[BA = \begin{pmatrix} 1 & 2 \\ 1 & -1 \end{pmatrix}\begin{pmatrix} 1 & 1\\ 1 & -1 \end{pmatrix}=\begin{pmatrix} 3 & -1 \\ 0 & 2 \end{pmatrix}\]\\
+
+Identifying multiplication as a composition should make it natural that
+matrix mulitplication is only defined for matrices:\\
+
+\[\begin{pmatrix}A\end{pmatrix}_{m*n} \begin{pmatrix}B\end{pmatrix}_{n*p}\]
+
+\[n=m\]\\
+ -\textgreater{} Dimensions must conform before \(A*B\) can be
+defined.\\
+
+\[\mathbbm{R_p}\xrightarrow{--B--}\mathbbm{R_n}\xrightarrow{--A--}\mathbbm{R_m}\]
+\[\overrightarrow{---AB---}\]\\
+
+\begin{tcolorbox}[colback=green!5,colframe=red!40!black,title=Definition]
+Let $\begin{pmatrix}A\end{pmatrix}_{m*n}$ and $\begin{pmatrix}B\end{pmatrix}_{n*p}$  then $C=AB$ is defined
+as $\begin{pmatrix}C\end{pmatrix}_{i*j} = \sum\limits_{k=1}^n \mathcal A_{ik}B_{kj}$ ; i=1,...,m; j=1,...,p
+\end{tcolorbox}
+
+~
+
+\(\mathbf{Examples}\)\\
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  \(\begin{pmatrix} 3 & 1 & 10 \\ 2 & 2 & 8 \end{pmatrix}\)
+  \(\begin{pmatrix} 60 \\ 80 \\ 40 \end{pmatrix}\) =
+  \(\begin{pmatrix} 660 \\ 600 \end{pmatrix}\)\\
+\end{enumerate}
+
+-\textgreater{} The matrices are represented by the dimensions as
+follows: 2x3, 3x1 and 2x1.\\
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  \(\begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}\)
+  \(\begin{pmatrix} 0 & -1 \\ 1 & -1 \end{pmatrix}\) =
+  \(\begin{pmatrix} 2 & -3 \\ 4 & -7 \end{pmatrix}\)\\
+\end{enumerate}
+
+-\textgreater{} The matrices are represented by the dimensions as
+follows: 2x2, 2x2 and 2x2.\\
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\item
+  \(\begin{pmatrix} 0 & -1 \\ 1 & -1 \end{pmatrix}\)
+  \(\begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}\) =
+  \(\begin{pmatrix} -3 & -4 \\ -2 & -2 \end{pmatrix}\)\\
+\item
+  Inner Product\\
+   \(\begin{pmatrix} 2 & 2 & 8 \end{pmatrix}\)
+  \(\begin{pmatrix} 50 \\ 100 \\ 30 \end{pmatrix}\) = \(540\)\\
+\end{enumerate}
+
+-\textgreater{} The matrices are represented by the dimensions as
+follows: 1x3, 3x1 and 1x1.\\
+
+More generally, if
+\(\begin{pmatrix} x_i \\ .\\ .\\.\\x_n \end{pmatrix}\)
+\(\begin{pmatrix} y_i \\ .\\ .\\.\\y_n \end{pmatrix}\), then
+\(X'Y=Y'X = \sum\limits_{i=1}^n \mathcal X_{i}Y_{i}\)
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{4}
+\item
+  Outer Product\\
+
+  \(\begin{pmatrix} 50 \\ 100 \\ 30 \end{pmatrix}\)
+  \(\begin{pmatrix} 2 & 2 & 8 \end{pmatrix}\) =
+  \(\begin{pmatrix} 100 & 100 & 400 \\ 200 & 200 & 800 \\ 60 & 60 & 240 \end{pmatrix}\)\\
+\end{enumerate}
+
+-\textgreater{} The matrices are represented by the dimensions as
+follows: 3x1, 1x3 and 3x3.\\
+
+-\textgreater{}
+\(\text{\textit{Note: b) $\neq$ c) which means that $\textbf{matrix mulitplication}$ is  $\textbf{NOT}$ commutative. Examples d) and e) confirm that.}}\)\\[2\baselineskip]
+
+\begin{tcolorbox}[colback=green!5,colframe=red!40!black,title=Definition (Linear Forms)]
+If if $\underline{x}=\begin{pmatrix} x_i \\ .\\ .\\.\\x_n  \end{pmatrix}$ is a vector of variables $x_1, ...x_n$ and $\underline{a}=if \begin{pmatrix} a_i \\ .\\ .\\.\\a_n  \end{pmatrix}$ is a vector of constants than $a'x=a_1x_1+a_2x_2+...a_nx_n$ is called a $\textbf{linear form}$ in x.
+
+
+
+\end{tcolorbox}
+
+It is easy to show that:
+
+\[\frac{d}{dx}(a'x)=\underline{a}\]\\
+
+\begin{tcolorbox}[colback=green!5,colframe=red!40!black,title=Definition (Length of a vector)]
+If if $\underline{x}=\begin{pmatrix} x_i \\ .\\ .\\.\\x_n  \end{pmatrix}$ $\in \mathbbm{R^n}$ then, $\|x\|$=$\sqrt{x'x}$=$\sqrt{\sum\limits_{i=1}^n x^2_i}$, if $\|x\|$=1, then x has an unit length.
+
+
+
+
+\end{tcolorbox}
+
+\(\textbf{Quadratic Forms}\).
+
+If A is symmetric then \(\underline{x'}A\underline{x}\) is called a
+\(\textbf{quadratic form}\)\\
+
+-\textgreater{} \(\text{\textit{Note: $x'Ax$ ia a scalar.}}\)\\
+
+\(\mathbf{Examples}\)\\
+
+\(\begin{pmatrix} x_1 & x_2 \end{pmatrix}\)
+\(\begin{pmatrix} 1 & 3 \\ 3 & 2 \end{pmatrix}\)
+\(\begin{pmatrix} x_1 \\ x_2 \end{pmatrix}\) =
+\({x^{2}_1 + 6x_1x_2 + 2x^{2}_2}\)~
+-\textgreater{}\(\text{\text{(quadratic form in 2 variables)}}\)\\
+
+-In 1-dimensional case: \(x*a*x = ax^2\) \&
+\(\frac{d}{dx}(x*a*x)=2ax\)\\
+
+-In higher dimensions:
+\(\frac{d}{dx}(\underline{x'}*A*\underline{x})=2A\underline{x}\)
+-\textgreater{} \(\text{\textit{Show it!}}\)\\
+
+\(\textbf{Definite and semi-definite matrices.}\)\\
+
+\begin{tcolorbox}[colback=green!5,colframe=red!40!black,title=Definition]
+A symmetric matrix $\underline{A}$ is said to be $\textbf{positive definite}$ if $\underline{x'}A\underline{x}$  $>$ for all $\underline{x}\neq0$
+
+
+
+\end{tcolorbox}
+
+-Positive semi-definite is defined by changing \(">"\) to \("\geq"\).
+
+-Negative definite and negative semi-definite are defined using \("<"\)
+and \("\leq"\), respectively.\\
+
+\(\mathbf{Example}\)\\
+
+-Variance-Covariance Matrices are Positive Semi-Definite.\\
+
+\(\mathbf{Example}\)\\
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  Show that:\\
+\end{enumerate}
+
+\(A=\begin{pmatrix} 2 & -2 \\ -2 & 2 \end{pmatrix}\) is positive
+semi-definite.\\
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Show that:\\
+\end{enumerate}
+
+\(B=\begin{pmatrix} 4 & -2 & 0\\ -2 & 4 & -2 \\ 0 & -2 & 4\end{pmatrix}\)
+is positive definite.\\
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Show that:\\
+\end{enumerate}
+
+\(C=\begin{pmatrix} 1 & 1 \\ 1 & -1 \end{pmatrix}\) is indefinite.\\
+
+\(\textbf{Properties of Matrix Multiplication.}\)\\
+
+-1. Associative:\\[2\baselineskip] \(A(BC)=(AB)C\)\\[2\baselineskip] -2.
+Distributive:\\[2\baselineskip] \(A(B+C)=AB+AC\)\\[2\baselineskip]
+\((B+C)A=BA+CA\)\\[2\baselineskip] -3. NOT-Commutative\\[2\baselineskip]
+-4. Identity Matrix\\[2\baselineskip]
+\(I_{nxn}\)=\(\begin{bmatrix} 1 & \cdots & 0 \\ \vdots & \ddots & \vdots \\ 0 & \cdots & 1 \end{bmatrix}\)
+serves as multiplicative identity for square matrices for \(\forall\)
+\(A_{nxn}\)
+
+\[I_{nxn}A_{nxn}=A_{nxn}I_{nxn}=A_{nxn}\]\\
+
+-\textgreater{}
+\(\text{\textit{Note:In case of identity matrix product does not commute!}}\)\\
+
+-v5. For any matrix \(A_{mxn}\)\\
+ \[A_{mxn}O_{nxp}=O_{mxp}\]\\
+ \[(AB)'=B'A'\] \[(ABC)'=C'B'A'\]\\
+
+\section{\texorpdfstring{5. Inverse of Matrices\\
+}{5. Inverse of Matrices }}\label{inverse-of-matrices}
+
+\begin{tcolorbox}[colback=green!5,colframe=red!40!black,title=Definition]
+  If for a squarmatrix $A_{nxn}$ $\exists$  a matrix $B_{nxn}$ sit.\
+  
+  (*) $AB = BA = I_{nxn}$.  Than $B$ is calles an $\underline{inverse}$ of $A$ and denoted $A^-1$. If $A$ has an inverse, it is called $\underline{non-singular}$.
+  
+
+\end{tcolorbox}
+
+-It turns out that one needs to check only one of the 2 conditions in
+(*).\\[2\baselineskip] -The inverse if it exists is
+\(\underline{unique}\).\\
+
+\(\mathbf{Example}\)\\
+ a)\(A=\begin{pmatrix} 2 & -1 \\ -1 & 1 \end{pmatrix}\) then
+\(A^{-1}=\begin{pmatrix} 1 & 1 \\ 1 & 2 \end{pmatrix}\) -\textgreater{}
+check directly.\\
+
+b)Show that \(A=\begin{pmatrix} 1 & 3 \\ 2 & 6 \end{pmatrix}\) does not
+have an inverse.\\
+
+c)Show that if \(A=\begin{pmatrix} a & b \\ c & d \end{pmatrix}\) than
+\(A^{-1} =\frac{1}{ad-bc}\begin{pmatrix} d & -b \\ -c & a \end{pmatrix}\)
+iff ad-bc \(\neq\) 0.\\
+
+\paragraph{\texorpdfstring{Properties of Matrix Inverse\\
+}{Properties of Matrix Inverse }}\label{properties-of-matrix-inverse}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  \((A')^{-1}=(A^{-1})'\)\\
+\item
+  \((A^{-1})^{-1}=A\)\\
+\item
+  \((AB)^{-1}=B^{-1}A^{-1}\)\\
+\end{enumerate}
+
+\paragraph{\texorpdfstring{Proof of c)\\
+}{Proof of c) }}\label{proof-of-c}
+
+Need to show that:\\
+ \[(AB)(B^{-1}A^{-1})= I\]
+
+Now:
+
+\begin{align}
+    (AB)(B^{-1}A^{-1}) &=A(BB^{-1})A^{-1}&& \text{(Associative}  \text{)}\\
+     &=AIA^{-1} && BB^{-1}=I \\
+     &=AA^{-1}   && BB^{-1}=I \\
+     &=I &&\text{(Definition of Inverse}  \text{)}
+\end{align}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Also extends to more than 2 matrices. For example:\\
+  \[(ABC)^{-1}=C^{-1}B^{-1}A^{-1}\]
+\end{enumerate}
+
+----\textgreater{} Show it!\\
+ -Armed with definition of matrix inverse we can cast system of linear
+equations and solution in the matrix form.\\
+
+(*)
+\[\begin{cases} x_1 + 2x_2 +x_3= 4\\ 4x_2 + 3x_3 = 3\\3x_1 + 6x_2 = -3 \end{cases}\]\\[2\baselineskip]
+Denote:\\
+
+\(A=\begin{pmatrix} 1 & 2 & 1\\ 0 & 4 & 3 \\ 3 & 6 & 0\end{pmatrix}\),
+\(b=\begin{pmatrix} 4\\ 3 \\-3\end{pmatrix}\) ,
+\(x=\begin{pmatrix} x_1\\ x_2 \\x_3\end{pmatrix}\)\\
+
+We can write (*) as:\\[2\baselineskip] (**)
+\[A\underline{x}=\underline{b}\]
+
+Also, if (*) has an unique solution then:
+
+\[\underline{x}=A^{-1}b\]
+
+Which is how we solve in case of \(\mathbbm{R^1}\).\\
+
+\begin{itemize}
+\item
+  We will return and solve this equation after introducing column
+  reduction.
+\item
+  As we have already seen, not every square matrix has an inverse. A
+  \textless{}=\textgreater{} condition for existence of the inverse is
+  for the columns of the matrix to be
+  \(\textbf{LINEARLY INDEPENDENT}\).\\
+\end{itemize}
+
+\paragraph{\texorpdfstring{Linear Independence\\
+}{Linear Independence }}\label{linear-independence}
+
+\begin{itemize}
+\tightlist
+\item
+  Two vectors of same size:\\
+\end{itemize}
+
+\(a=\begin{pmatrix} a_1 \\ .\\ .\\.\\a_n \end{pmatrix}\) \&
+\(b=\begin{pmatrix} b_1 \\ .\\ .\\.\\b_n \end{pmatrix}\)\\
+
+Are called \(\textbf{LINEARLY INDEPENDENT}\) if for \(\forall\)
+\(\lambda_1\), \(\lambda_2\), \(\in\) \(R\) siti
+\(\lambda^{2}_1 + \lambda^{2}_2 > 0\)\\
+ \[\lambda_1a + \lambda_2b \neq \underline{0}\],\\
+
+Otherwise there are called \(\textbf{LINEARLY DEPENDENT}\).\\
+
+\paragraph{\texorpdfstring{EXAMPLES\\
+}{EXAMPLES }}\label{examples}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  \(a=\begin{pmatrix} 1\\ 2 \end{pmatrix}\) and
+  \(b=\begin{pmatrix} 4\\ 8 \end{pmatrix}\) --\textgreater{} Ale
+  Linearly Dependent\\
+\end{enumerate}
+
+choose \(\lambda_1 = -4\) \& \(\lambda_2 = 1\)\\
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  \(a=\begin{pmatrix} 1\\ 0 \end{pmatrix}\) and
+  \(b=\begin{pmatrix} 0\\ 1 \end{pmatrix}\) --\textgreater{} Ale
+  Linearly Independent\\
+\end{enumerate}
+
+choose \(\lambda_1a +\lambda_2b= 0\)\\
+ \[<=>\]
+
+\[\begin{cases} \lambda_1= 0\\ \lambda_2 = 0 \end{cases}\]\\
+
+The concept extends to \ldots{}. \(\forall\) number of vectors.\\
+
+Set of vectors \(\underline{x_1},...\underline{x_i}\), for
+\(\underline{x_i} \in\) \(R^{n}\)\\
+
+is called \(\textbf{LINEARLY INDEPENDENT}\) if for \(\forall\)
+\(\lambda_1,...,\lambda_p\) \(\in\) R,
+\(\lambda^2_1+\lambda^2_2+\lambda^2_3+...+\lambda^2_p > 0\)\\
+
+\[\sum\limits_{k=1}^p \lambda_k \underline{x_k} \neq \underline{0}\]
+
+Otherwise , they are linearly dependent.\\
+
+\paragraph{\texorpdfstring{EXAMPLE\\
+}{EXAMPLE }}\label{example}
+
+The Vectors:\\
+ \(\begin{pmatrix} 0\\ 3\\2 \end{pmatrix}\),
+\(\begin{pmatrix} 1\\ -1\\-3 \end{pmatrix}\) ,
+\(\begin{pmatrix} 2\\ 2\\-1 \end{pmatrix}\) and
+\(\begin{pmatrix} 1\\ 13\\11 \end{pmatrix}\) are Linearly Dependent.
+
+\paragraph{\texorpdfstring{RANK OF MATRIX\\
+}{RANK OF MATRIX }}\label{rank-of-matrix}
+
+\begin{tcolorbox}[colback=green!5,colframe=red!40!black,title=Definition]
+Rank of a matrix is the largest number of Linear Independent or Rows. 
+
+
+
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=green!5,colframe=red!40!black,title=Definition]
+A square matrix $A_{nxn}$ is called $\textbf{Full-Rank}$ if rank $(A)=n$.
+
+
+
+\end{tcolorbox}
+
+Full rank square matrices have inverses \ldots{}.. is also true.
+
+\paragraph{\texorpdfstring{EXAMPLE(REVISIT)\\
+}{EXAMPLE(REVISIT) }}\label{examplerevisit}
+
+\[A=\begin{pmatrix} 1 & 3 \\ 2 & 6 \end{pmatrix}\]
+
+-\textgreater{}
+\(\text{\textit{Note that column linearly dependent.}}\)\\
+
+\(-3*\begin{pmatrix} 1 \\ 2 \end{pmatrix} + 1*\begin{pmatrix} 3 \\ 6 \end{pmatrix}\)
+= 0\\
+
+\begin{tcolorbox}[colback=green!5,colframe=blue!40!black,title=Theorem]
+If A is non-singular then Rank(AB)=Rank(B)=Rank(BA). 
+
+
+
+\end{tcolorbox}
+
+\section{\texorpdfstring{6. Determinant of a Matrix\\
+}{6. Determinant of a Matrix }}\label{determinant-of-a-matrix}
+
+-You may remember determinants from your linear algebra courses mean
+applying \(\textbf{Crame's Rule }\) to solving
+\(\textbf{systems of linear equations}\), also \(\textbf{Jacobians}\).
+
+-Determinants are defined for \(\textbf{square matrices}\).
+
+-Geometrically, the absolute value of determinant is the volume of the
+parallelpiped spanned by its column vectors.
+
+-The determinant of matrix \(A\) is denoted by \(|A|\).
+
+-The determinant of a 2x2 is
+\(\begin{pmatrix} a & b \\ c & d \end{pmatrix}\)=\(ad-bc\)
+
+-Direct calculation of determinants for matrices of larger sizes is
+combersome and usually some decomposition method is used. Calculating
+3x3 is still ok:\\[2\baselineskip]
+\[\begin{pmatrix} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23}\\a_{31} & a_{32} & a_{33} \end{pmatrix}=a_{11}a_{22}a_{33}+a_{21}a_{32}a_{13}+a_{12}a_{23}a_{31}-a_{13}a_{22}a_{31}-a_{12}a_{21}a_{33}-a_{11}a_{32}a_{23}\]\\
+
+\paragraph{\texorpdfstring{PROPERTIES OF DETERMINANT\\
+}{PROPERTIES OF DETERMINANT }}\label{properties-of-determinant}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  \(|A|=|A'|\)
+\item
+  \(|AB|=|A||B|\)
+\item
+  \(|A|=0\) \textless{}=\textgreater{} \(A\) is singular
+\item
+  If \(\exists A^{-1}\) then \(|A'|\)=\(\frac{1}{|A|}\)
+\item
+  \(|kA|= k^{n}|A|\), if \(A_{nxn}\)
+\item
+  Interchanging 2 rows (columns) changes the sign of determinant.
+\item
+  Multiplying of an entire row (column) by a constant multiplies the
+  determimant by that constant.
+\item
+  Adding a scalar multiple of one row (column) to another row (column)
+  does not change the value of the determinant.
+\item
+  If matrix is triangular , determinant is a product of diagonal
+  elements.
+\end{enumerate}
+
+\paragraph{\texorpdfstring{EXAMPLE\\
+}{EXAMPLE }}\label{example-1}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  A=\(\begin{pmatrix} 1 & 2 \\ 1 & d-1 \end{pmatrix}\), then \(|A|\) =
+  \(1*(-1)-1*2=-1-2=-3\)\\
+\item
+  \(\begin{pmatrix} 1 & -1 \\ 1 & 2 \end{pmatrix}\) = \(1*2-1*(-1)=3\)
+  --\textgreater{}(f)\\
+\item
+  \(|2*\begin{pmatrix} 1 & -1 \\ 1 & 2 \end{pmatrix}|\) =
+  \(\begin{pmatrix} 2 & 4 \\ 2 & -2 \end{pmatrix}\) =
+  \(-4-8=-12=2^2*(-3)\) --\textgreater{}(e)\\
+\end{enumerate}
+
+4.\(\begin{pmatrix} 5 & 2 \\ 5 & -1 \end{pmatrix}\) =
+\(-5-10=-15=5*(-3)\) --\textgreater{}(g)\\[2\baselineskip] 5. Let us
+multiply col 1 by -2 and add to col 2\\[2\baselineskip]
+\(\begin{pmatrix} 1 & 0 \\ 1 & -3 \end{pmatrix}\) = \(-3\) same as
+\textbar{}A\textbar{} --\textgreater{}(h)\\
+
+\section{\texorpdfstring{7. PATRITIONED MATRICES\\
+}{7. PATRITIONED MATRICES }}\label{patritioned-matrices}
+
+We can partition matrices into \(\textbf{blocks}\).\\
+
+\paragraph{\texorpdfstring{EXAMPLE\\
+}{EXAMPLE }}\label{example-2}
+
+\(A=\left[\begin{array}{c|c}\begin{matrix} 1 & 2 \\ 3 & 6 \end{matrix} & \begin{matrix} 0 & 4 \\ 8 & 0 \end{matrix} \\ \hline \begin{matrix} 1 & 2 \end{matrix} & \begin{matrix} 0 & 1\end{matrix} \end{array} \right]=\left[\begin{array}{c|c}A_{11} & A_{12} \\ \hline A_{21} & A_{22} \end{array} \right]\)
+
+\(A_{11}=\begin{pmatrix} 1 & 2 \\ 3 & 6 \end{pmatrix}\),
+\(A_{12}=\begin{pmatrix} 0 & 4 \\ 8 & 0 \end{pmatrix}\),
+\(A_{21}= \begin{pmatrix} 1 & 2\end{pmatrix}\),
+\(A_{22}= \begin{pmatrix} 0 & 1\end{pmatrix}\)\\
+
+As long as dimensions conform, matrix addition , multiplication,
+transposition work the same way. That is the power of PARTITIONING.\\
+
+\paragraph{\texorpdfstring{EXAMPLE\\
+}{EXAMPLE }}\label{example-3}
+
+\(\underline{b}=\left[\begin{array}{c|c} 2 \\ 0 \\ \hline -1 \\ 2 \end{array}\right]\)
+= \(\begin{pmatrix} b_1 \\ b_2\end{pmatrix}\)\\
+
+Let's do multiplication with partitioned matrices:\\
+
+\(A\underline{b}=\left[\begin{array}{c|c}A_{11} & A_{12} \\ \hline A_{21} & A_{22} \end{array} \right]\begin{pmatrix} b_1 \\ b_2\end{pmatrix}\)
+=
+\(\begin{pmatrix} A_{11}b_1 + A_{12}b_2\\ A_{21}b_1 + A_{22}b_2\end{pmatrix}\),
+where:\\
+
+\(A_{11}b_1=\begin{pmatrix} 2 \\ 6\end{pmatrix}\) ;
+\(A_{12}b_2=\begin{pmatrix} 8 \\ -8\end{pmatrix}\) ; \(A_{21}b_1=(2)\);
+\(A_{22}b_2=(2)\);\\
+ So: \(AB = \begin{pmatrix} 10 \\ -2 \\ 4\end{pmatrix}\)\\
+ Of course we get the same answer by performing multiplication on
+original matrices. (DO IT!)\\
+
+\paragraph{\texorpdfstring{EXAMPLE\\
+}{EXAMPLE }}\label{example-4}
+
+If R\&S are non-singular show that :
+\(\begin{pmatrix} R & 0 \\ L & S\end{pmatrix}^{-1}\) =
+\(\begin{pmatrix} R^{-1} & 0 \\ -S^{-1}LR^{-1} & S^{-1}\end{pmatrix}\)\\
+
+PROOF ---\textgreater{} Provide.
+
+\paragraph{EXAMPLE~}\label{example-5}
+
+If A is a block diagonal matrix:\\
+
+\(A\)=\(\begin{bmatrix} A_{11} & \cdots & 0 \\ \vdots & \ddots & \vdots \\ 0 & \cdots & A_{nn} \end{bmatrix}\)\\[2\baselineskip]Then\\
+ \(det(A)=det(A_{11})*det(A_{11})*det(A_{22})...det(A_{nn})\)
+
+Let:\\
+
+\(A =\begin{pmatrix} 2 & 0 & 0\\ 0 & 4 & 5 \\ 0 & 6 & 7 \end{pmatrix}\)\\
+
+Find det(A) ---\textgreater{} Provide solution.
+
+\section{\texorpdfstring{7. SOME SPECIAL MATRICES\\
+}{7. SOME SPECIAL MATRICES }}\label{some-special-matrices}
+
+\begin{itemize}
+\item
+  SYMMETRIC MATRICES\\
+
+  Square matrix A, \(A^{T}=A\)\\
+   Variance - Covariance matrices are symmetric.\\
+\item
+  ORTHOGONAL MATRICES (RIGID TRANSFORMATION)\\
+
+  Two vectors \(\underline{x}\) \& \(\underline{y}\) are called
+  \(\textbf{ORTHOGONAL}\) if \(\underline{x^{T}}\) \(\underline{y}\) = 0
+  (Dot Product)\\
+
+  Two vectors \(\underline{x}\) \& \(\underline{y}\) are called
+  \(\textbf{ORTHOGONAL}\) if:\\
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi})}
+  \item
+    They are orthogonal and
+  \item
+    \(\underline{x^{T}}\) \(\underline{x}\) = 1 ; \(\underline{y^{T}}\)
+    \(\underline{y}\) = 1 (Unit Length)\\
+  \end{enumerate}
+\item
+  A square matrix Q is called \(\textbf{ORTHOGONAL}\) if its columns are
+  ORTHOGONAL.\\
+\end{itemize}
+
+\paragraph{\texorpdfstring{EXAMPLE\\
+}{EXAMPLE }}\label{example-6}
+
+Is
+\(A =\begin{pmatrix} \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}} \\ -\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}\end{pmatrix}\)
+orthonormal? Show it.\\
+
+\begin{itemize}
+\item
+  Properties of ORTHOGONAL Matrices.\\
+
+  \begin{enumerate}
+  \def\labelenumi{\roman{enumi})}
+  \tightlist
+  \item
+    \(Q^{T}Q=I\)\\
+  \item
+    \(Q^{-1}=Q^{T}\)\\
+  \item
+    \textbar{}delta\textbar{} = 1 ---\textgreater{} det is +/- 1\\
+  \end{enumerate}
+\item
+  Idempotent Matrices.\\
+
+  A is idempotent \textless{}--\textgreater{} \(A^{2}=A\)
+
+  If A is idempotent than \((I - H)\) is too.
+\end{itemize}
+
+\paragraph{\texorpdfstring{EXAMPLE\\
+}{EXAMPLE }}\label{example-7}
+
+The hat matrix from OLS
+
+\(H=X(X'X)^{-1}X'\) is idempotent. Show it!
+
+\end{document}

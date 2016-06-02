@@ -852,7 +852,118 @@ $A_{11}b_1=\begin{pmatrix} 2 \\ 6\end{pmatrix}$ ; $A_{12}b_2=\begin{pmatrix} 8 \
 
 So: $AB = \begin{pmatrix} 10 \\ -2 \\ 4\end{pmatrix}$\
 
-Of course we get the same answer by performing multiplication on original matrices. (DO IT!)
+Of course we get the same answer by performing multiplication on original matrices. (DO IT!)\
+
+
+
+
+
+
+####EXAMPLE\
+
+If R&S are non-singular show that : $\begin{pmatrix} R & 0 \\ L & S\end{pmatrix}^{-1}$ = $\begin{pmatrix} R^{-1} & 0 \\ -S^{-1}LR^{-1} & S^{-1}\end{pmatrix}$\
+
+
+PROOF --->  Provide.
+
+
+     
+      
+####EXAMPLE\ 
+
+If A is a block diagonal matrix:\
+
+  $A$=$\begin{bmatrix} A_{11} & \cdots & 0 \\ \vdots & \ddots & \vdots \\ 0 & \cdots & A_{nn} \end{bmatrix}$\
+  
+Then\
+
+$det(A)=det(A_{11})*det(A_{11})*det(A_{22})...det(A_{nn})$
+
+Let:\
+
+$A =\begin{pmatrix} 2 & 0 & 0\\ 0 & 4 & 5 \\ 0 & 6 & 7 \end{pmatrix}$\
+
+
+
+Find det(A) --->  Provide solution.
+
+
+
+#7. SOME SPECIAL MATRICES\
+
+  - SYMMETRIC MATRICES\
+  
+  
+    Square matrix A, $A^{T}=A$\
+    
+    Variance - Covariance matrices are symmetric.\
+    
+  - ORTHOGONAL MATRICES (RIGID TRANSFORMATION)\
+  
+    
+    
+    Two vectors $\underline{x}$ & $\underline{y}$ are called $\textbf{ORTHOGONAL}$ if $\underline{x^{T}}$ $\underline{y}$ = 0 (Dot Product)\
+    
+    
+    Two vectors $\underline{x}$ & $\underline{y}$ are called $\textbf{ORTHOGONAL}$ if:\
+    
+    1) They are orthogonal and
+    
+    2) $\underline{x^{T}}$ $\underline{x}$ = 1 ; $\underline{y^{T}}$ $\underline{y}$ = 1 (Unit Length)\
+    
+    
+    
+    
+  - A square matrix Q is called $\textbf{ORTHOGONAL}$ if its columns are ORTHOGONAL.\
+  
+  
+  
+
+####EXAMPLE\
+
+Is $A =\begin{pmatrix} \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}} \\ -\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}\end{pmatrix}$ orthonormal? Show it.\
+
+
+  - Properties of ORTHOGONAL Matrices.\
+  
+    i) $Q^{T}Q=I$\
+    
+    ii) $Q^{-1}=Q^{T}$\
+    
+    iii) |delta| = 1 ---> det is +/- 1\
+    
+  - Idempotent Matrices.\
+  
+  
+  
+      A is idempotent <--> $A^{2}=A$ 
+      
+      If A is idempotent than $(I - H)$ is too. 
+      
+      
+####EXAMPLE\
+
+The hat matrix from OLS
+
+$H=X(X'X)^{-1}X'$ is idempotent.   Show it!
+      
+
+
+  
+  
+    
+    
+    
+  
+  
+  
+  
+    
+          
+
+ 
+
+
 
 
 
