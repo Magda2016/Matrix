@@ -258,11 +258,11 @@ $\mathbf{Example}$ \
   \end{center}
   
   
-  1: $y=\alpha*x$\
+  $I$: $y=\alpha*x$\
   
-  2:  $\zeta=\beta*y$\
+  $II$:  $\zeta=\beta*y$\
   
-  3:$\zeta=\beta*\alpha*x$
+  $III$:$\zeta=\beta*\alpha*x$
   
   
   
@@ -946,6 +946,102 @@ Is $A =\begin{pmatrix} \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}} \\ -\frac{1}{\sq
 The hat matrix from OLS
 
 $H=X(X'X)^{-1}X'$ is idempotent.   Show it!
+
+
+
+##PERMUTATION MATRICES\
+
+
+$\textbf{P}$ is called a $\textbf{Permutation Matrix}$ if it can be obtained from identity matrix by permuting columns.\
+
+
+ -Properties:
+ 
+  a) Permutation Matrices are  $\textbf{orthogonal}$. 
+     Their determinant is +/- 1.\
+      
+     Also if $|A| = a$ and $\textbf{P}$ is a Permutation Matrix , then $|AP|$ = $|PA|$ = +/- a \
+     
+     
+     
+##DIAGONAL MATRICES\
+
+If only non zero elements are on diagonal:\
+
+ $I_{nxn}$=$\begin{bmatrix} a_{11} & \cdots & 0 \\ \vdots & \ddots & \vdots \\ 0 & \cdots & a_{nn} \end{bmatrix}$\
+ 
+Properties:
+
+  a) Determinant = $a_{11}*a_{22}*...*a_{nn}$\
+  
+  b)  $\prod_{i=1}^{n}a_{ii} \neq 0$ <=> Full Rank\
+  
+  
+  
+  \begin{equation}
+  \left(
+    \begin{array}{*5{c}}
+     x & x & x & x & x \\
+     0 & x & x & x & x \\
+     0 &  0 & x & x & x \\
+     0 &  0 &  0 & x & x \\
+     0 &  0 &  0 &  0 & x \\
+  \end{array}\right)
+\end{equation}
+
+---> UPPER TRIANGULAR
+
+
+\begin{equation}
+  \left(
+    \begin{array}{*5{c}}
+     0 & 0 & 0 & 0 & 0 \\
+     x & 0 & 0 & 0 & 0 \\
+     x &  x & 0 & 0 & 0 \\
+     x &  x &  x & 0 & 0 \\
+     x &  x &  x &  x & 0 \\
+  \end{array}\right)
+\end{equation}
+
+
+---> LOWER TRIANGULAR\
+
+
+Properties ( the same as for diagonal matrices):
+
+  a) Determinant = $a_{11}*a_{22}*...*a_{nn}$\
+  
+  b)  $\prod_{i=1}^{n}a_{ii} \neq 0$ <=> Full Rank\
+  
+  
+#8. COLUMN REDUCTION\
+
+Column reduction of matrices is used for various purposes, including:\
+
+
+  -Determinig if matrix is full rank\
+  
+  -Calculating inverse.\
+  
+  -Calculating the determinant.\
+  
+  -Solving system of linear equations.\
+  
+  
+Column reduction involves 3 types of so called elementry column operations.\
+
+
+Each  elementry column operation is equivalent to multiplying the matrix from the right by a special type of matrix.\
+    
+
+
+
+      
+
+
+
+
+
       
 
 
@@ -963,6 +1059,10 @@ $H=X(X'X)^{-1}X'$ is idempotent.   Show it!
 
  
 
+
+  
+  
+  
 
 
 
