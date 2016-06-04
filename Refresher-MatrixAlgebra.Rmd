@@ -1032,6 +1032,112 @@ Column reduction involves 3 types of so called elementry column operations.\
 
 
 Each  elementry column operation is equivalent to multiplying the matrix from the right by a special type of matrix.\
+
+
+
+
+$\underline{Notes:}$
+
+
+  -This should remind us those operations that we perform on equations which preserve certain properties (most commonly, solutions)
+  
+  -One could also perfrom row reduction in which case one pre-multiplies vs. post-multiplication.\
+  
+  
+###ELEMENTARY COLUMN OPERATIONS\
+
+$\bold{1}$. SWITCH  2 COLUMNS: $\underline{i}$ & $\underline{j}$\
+
+  -Multiply from right by the permutate matrix that is obtained from the identity matrix by swapping its $\underline{i^{th}}$ & $\underline{j^{th}}$ columns.\
+  
+  
+
+
+####EXAMPLE\
+
+$A =\begin{pmatrix} 2 & 6 & 1\\ 5 & -5 & -2 \\ -2 & 3 & 1 \end{pmatrix}$\
+
+
+Swap columns 2<--->3\
+
+
+Let: $P =\begin{pmatrix} 1 & 0 & 0\\ 0 & 0 & 1 \\ 0 & 1 & 0 \end{pmatrix}$\
+
+
+
+
+$AP$=$\begin{pmatrix} 2 & 6 & 1\\ 5 & -5 & -2 \\ -2 & 3 & 1 \end{pmatrix}\begin{pmatrix} 1 & 0 & 0\\ 0 & 0 & 1 \\ 0 & 1 & 0 \end{pmatrix}$ = $\begin{pmatrix} 2 & 5 & -2\\ 1 & -2 & 1 \\ 6 & -5 & 3 \end{pmatrix}$\
+
+
+$\underline{Notes:}$\
+
+
+$P^{-1}=P^{1}$, $|P|$= -1\
+
+
+
+\begin{tcolorbox}[colback=yellow!5,colframe=yellow!40!black,title=Question]
+1. What features are preserved?
+
+(1.Rank, 2. Determinant gets mulitplied by -1)
+
+\end{tcolorbox}\
+
+
+
+
+
+
+$\bold{2}$. MULTIPLY $\underline{j^{th}}$ column by a scalar $\underline{n}$\
+
+
+  -Multiply from the right by the identity matrix, $(jj)^{th}$
+element of which is replaced by  $\underline{n}$\
+
+
+
+####EXAMPLE\
+
+
+
+$A =\begin{pmatrix} 2 & 6 & 1\\ 5 & -5 & -2 \\ -2 & 3 & 1 \end{pmatrix}$\
+
+
+
+Multiply $3^{rd}$ column by $\underline{4}$\
+
+
+
+Let: $N =\begin{pmatrix} 1 & 0 & 0\\ 0 & 1 & 0 \\ 0 & 0 & 4 \end{pmatrix}$\
+
+
+
+$AN$=$\begin{pmatrix} 2 & 6 & 1\\ 5 & -5 & -2 \\ -2 & 3 & 1 \end{pmatrix}\begin{pmatrix} 1 & 0 & 0\\ 0 & 1 & 0 \\ 0 & 0 & 4 \end{pmatrix}$ = $\begin{pmatrix} 2 & 6 & 4\\ 5 & -5 & -8 \\ -2 & 3 & 4 \end{pmatrix}$\
+
+
+
+
+\begin{tcolorbox}[colback=yellow!5,colframe=yellow!40!black,title=Question]
+1. What features are preserved?
+
+(1.Rank, 2. Determinant gets mulitplied by $\underline{n})
+
+\end{tcolorbox}\
+
+
+
+$\underline{Notes:}$\
+
+
+$N^{-1} =\begin{pmatrix} 1 & 0 & 0\\ 0 & 1 & 0 \\ 0 & 0 & 1/4 \end{pmatrix}$; $|N|= n$\
+
+
+
+
+
+
+  
+  
     
 
 
