@@ -1096,7 +1096,7 @@ Let:
 
 \end{tcolorbox}
 
-\(\bold{2}\). MULTIPLY \(\underline{j^{th}}\) column by a scalar
+\(\bold{2}\). MULTIPLY \(\underline{j^{th}}\) COLUMN BY A SCALAR
 \(\underline{n}\)\\
 
 -Multiply from the right by the identity matrix, \((jj)^{th}\) element
@@ -1116,16 +1116,136 @@ Let:
 =
 \(\begin{pmatrix} 2 & 6 & 4\\ 5 & -5 & -8 \\ -2 & 3 & 4 \end{pmatrix}\)\\
 
-\textbackslash{}begin\{tcolorbox\}{[}colback=yellow!5,colframe=yellow!40!black,title=Question{]}
+\begin{tcolorbox}[colback=yellow!5,colframe=yellow!40!black,title=Question]
 1. What features are preserved?
 
-(1.Rank, 2. Determinant gets mulitplied by \$\underline{n})
+(1.Rank, 2. Determinant gets mulitplied by $\underline{n}$)
 
-\textbackslash{}end\{tcolorbox\}\\
+\end{tcolorbox}
 
 \(\underline{Notes:}\)\\
 
 \(N^{-1} =\begin{pmatrix} 1 & 0 & 0\\ 0 & 1 & 0 \\ 0 & 0 & 1/4 \end{pmatrix}\);
 \(|N|= n\)\\
+
+\(\bold{3}\). MULTIPLY COLUMN \(\underline{j}\) BY COLUMN BY A SCALAR
+\(\underline{n}\) AND ADD TO COLUMN \(\underline{i}\)\\
+
+-Multiply from the right by the matrix that is obtained from identity by
+multiplying its column \(\underline{j}\) by \(\underline{n}\) and adding
+to and replacing column \(\underline{i}\).\\
+
+\paragraph{\texorpdfstring{EXAMPLE\\
+}{EXAMPLE }}\label{example-10}
+
+\(A =\begin{pmatrix} 2 & 6 & 1\\ 5 & -5 & -2 \\ -2 & 3 & 1 \end{pmatrix}\)\\
+
+-Multiply \(1^{st}\) column by \(\underline{-3}\) and add to column
+\(\underline{3}\)\\
+
+Let:
+\(L =\begin{pmatrix} 1 & -3 & 0\\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}\)\\
+
+\(Al\)=\(\begin{pmatrix} 2 & 6 & 1\\ 5 & -5 & -2 \\ -2 & 3 & 1 \end{pmatrix}\begin{pmatrix} 1 & -3 & 0\\ 0 & 1 & 0 \\ 0 & 0 & 4 \end{pmatrix}\)
+=
+\(\begin{pmatrix} 2 & 5 & -2\\ 0 & -20 & 9 \\ 1 & -2 & 1 \end{pmatrix}\)\\
+
+\(\underline{Notes:}\)\\
+
+\(L^{-1} =\begin{pmatrix} 1 & 3 & 0\\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{pmatrix}\)
+= \(L(-m)\)\\
+ \(|L|\)=1;\\
+
+-Significance of elementary column operations is that they perserve:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\item
+  The Rank
+\item
+  Solution set of system of linear equations
+\end{enumerate}
+
+-Also, all three types of matrices that are used to perform elementary
+column operations have inverses.
+\(\textbf{Therefore their product has an inverse.}\)\\
+
+-Some of the elementary column operations alter the determinant by a
+factor of \(\bold{-1}\) or \(\bold{-n}\). If one keeps track of theses
+operations, one can still use column reduction to calculate
+determinants.\\
+
+The goal of column operations is to create zeros in critical positions
+of the matrix, that will then allow to calcuate:\\
+ * Rank\\
+ * Inverse\\
+ * Eigenvalues\\
+ * Determinant\\
+ * Etc.\\
+
+\paragraph{\texorpdfstring{EXAMPLE\\
+}{EXAMPLE }}\label{example-11}
+
+Find the rank and the determinant of:\\
+
+\(A =\begin{pmatrix} 2 & 5 & -2\\ 6 & -5 & 3 \\ 1 & -2 & 1 \end{pmatrix}\)\\
+
+We will do column reduction:\\
+
+\(\bold{1).}\)\\
+
+\(\begin{vmatrix} 2 & 5 & -2\\ 6 & -5 & 3 \\ 1 & -2 & 1 \end{vmatrix}\)\\
+
+\(\begin{vmatrix} 1 & 0 & 0\\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{vmatrix}\)\\
+
+---\textgreater{}-3*Col1 + Col2\\
+
+\(\bold{2).}\)\\
+
+\(\begin{vmatrix} 2 & 5 & -2\\ 0 & -20 & 9 \\ 1 & -2 & 1 \end{vmatrix}\)\\
+
+\(\begin{vmatrix} 1 & -3 & 0\\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{vmatrix}\)\\
+
+---\textgreater{}2*Col3\\
+
+\(\bold{3).}\)\\
+
+\(\begin{vmatrix} 2 & 5 & -2\\ 0 & -20 & 9 \\ 1 & -2 & 1 \end{vmatrix}\)\\
+
+\(\begin{vmatrix} 1 & -3 & 0\\ 0 & 1 & 0 \\ 0 & 0 & 2 \end{vmatrix}\)\\
+
+---\textgreater{}-1*Col1 + Col3\\
+
+\(\bold{4).}\)\\
+
+\(\begin{vmatrix} 2 & 5 & -2\\ 0 & -20 & 9 \\ 1 & -9 & 4 \end{vmatrix}\)\\
+
+\(\begin{vmatrix} 1 & -3 & -1\\ 0 & 1 & 0 \\ 0 & 0 & 2 \end{vmatrix}\)\\
+
+---\textgreater{}20*Col3\\
+
+\(\bold{5).}\)\\
+
+\(\begin{vmatrix} 2 & 5 & -2\\ 0 & -20 & 9 \\ 0 & -180 & 80 \end{vmatrix}\)\\
+
+\(\begin{vmatrix} 1 & -3 & -20\\ 0 & 1 & 0 \\ 0 & 0 & 40 \end{vmatrix}\)\\
+
+---\textgreater{}-9*Col2 + Col3\\
+
+\(\bold{6).}\)\\
+
+\(\begin{vmatrix} 2 & 0 & 0\\ 5 & -20 & 0\\ -2 & 9 & -1 \end{vmatrix}\)\\
+
+\(\begin{vmatrix} 1 & -3 & 7\\ 0 & 1 & -9 \\ 0 & 0 & 40 \end{vmatrix}\)\\
+
+Rank(A) = 3\\
+ Det(A) = 2\emph{(-20)}(-1):(2*20) = 1\\
+
+\paragraph{\texorpdfstring{EXAMPLE CONTINOUS\\
+}{EXAMPLE CONTINOUS }}\label{example-continous}
+
+Find \(A^{-1}\)\\
+ We continue column reduction working backwords from the last column.
+The objective is to get 0's at all non diagonal locations.\\
 
 \end{document}
