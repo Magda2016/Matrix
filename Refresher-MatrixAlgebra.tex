@@ -77,6 +77,7 @@
 \usepackage{threeparttable}
 \usepackage{booktabs}
 \usepackage{lipsum}
+\usepackage{mathtools}
 \usepackage{tcolorbox}
 \usepackage{tkz-graph}
 \newcommand{\vect}[1]{\boldsymbol{#1}}
@@ -1247,5 +1248,186 @@ Rank(A) = 3\\
 Find \(A^{-1}\)\\
  We continue column reduction working backwords from the last column.
 The objective is to get 0's at all non diagonal locations.\\
+
+---\textgreater{}-9*Col3 + Col2\\
+
+\(\bold{7).}\)\\
+
+\(\begin{vmatrix} 2 & 0 & 0\\ 5 & -20 & 0\\ -2 & 0 & -1 \end{vmatrix}\)\\
+
+\(\begin{vmatrix} 1 & 60 & 7\\ 0 & -80 & -9 \\ 0 & 360 & 40 \end{vmatrix}\)\\
+
+---\textgreater{}-2*Col3 + Col1\\
+
+\(\bold{8).}\)\\
+
+\(\begin{vmatrix} 2 & 0 & 0\\ 5 & -20 & 0\\ 0 & 0 & -1 \end{vmatrix}\)\\
+
+\(\begin{vmatrix} -13 & 60 & 7\\ 18 & -80 & -9 \\ -80 & 360 & 40 \end{vmatrix}\)\\
+
+---\textgreater{}4*Col1\\
+
+\(\bold{9).}\)\\
+
+\(\begin{vmatrix} 8 & 0 & 0\\ 20 & -20 & 0\\ 0 & 0 & -1 \end{vmatrix}\)\\
+
+\(\begin{vmatrix} -52 & 60 & 7\\ 72 & -80 & -9 \\ -320 & 360 & 40 \end{vmatrix}\)\\
+
+---\textgreater{}Col2 +Col1\\
+
+\(\bold{10).}\)\\
+
+\(\begin{vmatrix} 8 & 0 & 0\\ 0 & -20 & 0\\ 0 & 0 & -1 \end{vmatrix}\)\\
+
+\(\begin{vmatrix} 8 & 60 & 7\\ -8 & -80 & -9 \\ 40 & 360 & 40 \end{vmatrix}\)\\
+
+---\textgreater{}\(\frac{1}{8}\) *Col1\\
+
+\(\bold{11).}\)\\
+
+\(\begin{vmatrix} 1 & 0 & 0\\ 0 & -20 & 0\\ 0 & 0 & -1 \end{vmatrix}\)\\
+
+\(\begin{vmatrix} 1 & 60 & 7\\ -1 & -80 & -9 \\ 5 & 360 & 40 \end{vmatrix}\)\\
+
+---\textgreater{}\(\frac{-1}{20}\) *Col2\\
+
+\(\bold{12).}\)\\
+
+\(\begin{vmatrix} 1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & -1 \end{vmatrix}\)\\
+
+\(\begin{vmatrix} 1 & -3 & 7\\ -1 & 4 & -9 \\ 5 & -18 & 40 \end{vmatrix}\)\\
+
+---\textgreater{}-1 *Col3\\
+
+\(\bold{13).}\)\\
+
+\(\begin{vmatrix} 1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & 1 \end{vmatrix}\)\\
+
+\(\begin{vmatrix} 1 & -3 & -7\\ -1 & 4 & 9 \\ 5 & -18 & -40 \end{vmatrix}\)\\
+
+Thus:\\
+
+\[A^{-1}=\begin{vmatrix} 1 &   -3 &   -7\\ -1 &   4 &   9 \\ 5 &   -18 &   -40 \end{vmatrix}\]\\
+ \newpage
+
+\paragraph{\texorpdfstring{EXAMPLE\\
+}{EXAMPLE }}\label{example-12}
+
+Solve:
+
+\[\begin{cases} 2x_1 + 6x_2 +x_3 = 0\\ 5x_1 - 5x_2 - 2x_3 = -1\\-2x_1 + 3x_2 +x_3 = 2 \end{cases}\]\\
+
+Denote: \(x=\begin{pmatrix} x_1\\ x_2\\ x_3 \end{pmatrix}\),
+\(b=\begin{pmatrix} 0\\ -1\\ 2 \end{pmatrix}\),
+\(A=\begin{pmatrix} 2 & 6 & 1\\ 5 & -5 & -2 \\ -2 & 3 & 1 \end{pmatrix}\)\\
+
+Solution will be:
+\(x = A^{-1}b=\begin{pmatrix} 1 & -3 & -7\\ -1 & 4 & 9 \\ 5 & -18 & -40 \end{pmatrix}\begin{pmatrix} 0\\ -1\\ 2 \end{pmatrix}=\begin{pmatrix} -11\\ 14\\ -62 \end{pmatrix}\)\\
+
+\paragraph{\texorpdfstring{EXAMPLE\\
+}{EXAMPLE }}\label{example-13}
+
+Solve the system of equations by finding \(A^{-1}\). Example from page
+\ldots{}:
+
+(*)
+\[\begin{cases} x_1 + 2x_2 +x_3= 4\\ 4x_2 + 3x_3 = 3\\3x_1 + 6x_2 = -3 \end{cases}\]\\[2\baselineskip]Denote:\(A=\begin{pmatrix} 1 & 2 & 1\\ 0 & 4 & 3 \\ 3 & 6 & 0\end{pmatrix}\),
+\(b=\begin{pmatrix} 4\\ 3 \\-3\end{pmatrix}\) ,
+\(x=\begin{pmatrix} x_1\\ x_2 \\x_3\end{pmatrix}\)\\
+
+\[A^{-1}=\begin{pmatrix} \frac{3}{2}&   \frac{1}{2} &   -\frac{1}{6}\\ -\frac{3}{4} &   \frac{1}{4} &   \frac{1}{4} \\ 1 &   0 &   -\frac{1}{3} \end{pmatrix}\]\\
+ Solution:
+\(x=A^{-1}b=\begin{pmatrix} \frac{3}{2}& \frac{1}{2} & -\frac{1}{6}\\ -\frac{3}{4} & \frac{1}{4} & \frac{1}{4} \\ 1 & 0 & -\frac{1}{3} \end{pmatrix}\)\(\begin{pmatrix} 4\\ 3\\ -3 \end{pmatrix}=\begin{pmatrix} 5\\ -3\\ 5 \end{pmatrix}\)\\
+ \newpage
+
+\(\bold{1).}\)\\
+
+---\textgreater{}-2*Col1 + Col2\\
+
+\(\bold{2).}\)\\
+ \(\begin{vmatrix} 1 & 0 & 1\\ 0 & 4 & 3 \\ 3 & 0 & 0 \end{vmatrix}\)\\
+
+\(\begin{vmatrix} 1 & -2 & 0\\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{vmatrix}\)\\
+
+---\textgreater{}-1*Col1 + Col3\\
+
+\(\bold{3).}\)\\
+ \(\begin{vmatrix} 1 & 0 & 0\\ 0 & 4 & 3 \\ 3 & 0 & -3 \end{vmatrix}\)\\
+
+\(\begin{vmatrix} 1 & -2 & -1\\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{vmatrix}\)\\
+
+---\textgreater{}-3*Col2\\
+
+\(\bold{4).}\)\\
+
+\(\begin{vmatrix} 1 & 0 & 0\\ 0 & -12 & 3 \\ 3 & 0 & -3 \end{vmatrix}\)\\
+
+\(\begin{vmatrix} 1 & 6 & -1\\ 0 & -3 & 0 \\ 0 & 0 & 1 \end{vmatrix}\)\\
+
+---\textgreater{}4*Col3\\
+
+\(\bold{5).}\)\\
+
+\(\begin{vmatrix} 1 & 0 & 0\\ 0 & -12 & 12 \\ 3 & 0 & -12 \end{vmatrix}\)\\
+
+\(\begin{vmatrix} 1 & 6 & -4\\ 0 & -3 & 0 \\ 0 & 0 & 4 \end{vmatrix}\)\\
+
+---\textgreater{}Col2 + Col3\\
+
+\(\bold{6).}\)\\
+
+\(\begin{vmatrix} 1 & 0 & 0\\ 0 & -12 & 0 \\ 3 & 0 & -12 \end{vmatrix}\)\\
+
+\(\begin{vmatrix} 1 & 6 & 2\\ 0 & -3 & -3 \\ 0 & 0 & 4 \end{vmatrix}\)\\
+
+---\textgreater{}4*Col1\\
+
+\(\bold{7).}\)\\
+
+\(\begin{vmatrix} 4 & 0 & 0\\ 0 & -12 & 0 \\ 12 & 0 & -12 \end{vmatrix}\)\\
+
+\(\begin{vmatrix} 4 & 6 & 2\\ 0 & -3 & -3 \\ 0 & 0 & 4 \end{vmatrix}\)\\
+
+---\textgreater{}Col3+Col1\\
+
+\(\bold{8).}\)\\
+
+\(\begin{vmatrix} 4 & 0 & 0\\ 0 & -12 & 0 \\ 0 & 0 & -12 \end{vmatrix}\)\\
+
+\(\begin{vmatrix} 6 & 6 & 2\\ -3 & -3 & -3 \\ 4 & 0 & 4 \end{vmatrix}\)\\
+
+---\textgreater{}\(\frac{1}{4}\)*Col1\\
+
+\(\bold{9).}\)\\
+
+\(\begin{vmatrix} 1 & 0 & 0\\ 0 & -12 & 0 \\ 0 & 0 & -12 \end{vmatrix}\)\\
+
+\(\begin{vmatrix} 1.5 & 6 & 2\\ -0.75 & -3 & -3 \\ 1 & 0 & 4 \end{vmatrix}\)\\
+
+---\textgreater{}\(-\frac{1}{12}\)*Col2\\
+
+\(\bold{10).}\)\\
+
+\(\begin{vmatrix} 1 & 0 & 0\\ 0 & 1 & 0 \\ 0 & 0 & -12 \end{vmatrix}\)\\
+
+\(\begin{vmatrix} 1.5 & -0.5 & 2\\ -0.75 & 0.25 & -3 \\ 1 & 0 & 4 \end{vmatrix}\)\\
+
+---\textgreater{}\(-\frac{1}{12}\)*Col3\\
+ \(\bold{11).}\)\\
+ \(\begin{vmatrix} 1 & 0 & 0\\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{vmatrix}\)\\
+
+\(\begin{vmatrix} 1.5 & -0.5 & -0.17\\ -0.75 & 0.25 & 0.25 \\ 1 & 0 & -0.33 \end{vmatrix}\)\\
+
+\begingroup
+
+\begin{tabular}{ c c c }
+Step 1 &  & Step 2 \\
+$\begin{vmatrix} 1 & 2 & 1\\ 0 & 4 & 3 \\ 3 & 6 & 0 \end{vmatrix}$ &  & $\begin{vmatrix} 1 & 2 & 1\\ 0 & 4 & 3 \\ 3 & 6 & 0 \end{vmatrix}$\\
+ & $\xrightarrow{hello}$ & \\
+$\begin{vmatrix} 1 &   0 &   0\\ 0 &   1 &   0 \\ 0 &   0 &   1 \end{vmatrix}$ &  & $\begin{vmatrix} 1 &   0 &   0\\ 0 &   1 &   0 \\ 0 &   0 &   1 \end{vmatrix}$\\
+ &  & \\
+\end{tabular}
+
+\endgroup
 
 \end{document}
