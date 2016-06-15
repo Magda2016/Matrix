@@ -1202,99 +1202,38 @@ The goal of column operations is to create zeros in critical positions of the ma
 Find the rank and the determinant of:\
 
 
-$A =\begin{pmatrix} 2 & 5 & -2\\ 6 & -5 & 3 \\ 1 & -2 & 1 \end{pmatrix}$\
+$A =\begin{pmatrix} 2 & 6 & 1\\ 5 & -5 & -2 \\ -2 & 3 & 1 \end{pmatrix}$\
 
 
 We will do column reduction:\
 
-
-
-
-
-$\bold{1).}$\
-
-$\begin{vmatrix} 2 & 5 & -2\\ 6 & -5 & 3 \\ 1 & -2 & 1 \end{vmatrix}$\
-
-
-$\begin{vmatrix} 1 &   0 &   0\\ 0 &   1 &   0 \\ 0 &   0 &   1 \end{vmatrix}$\
-
-
-
-
---->-3*Col1 + Col2\
-
-
-
-
-$\bold{2).}$\
-
-$\begin{vmatrix} 2 & 5 & -2\\ 0 & -20 & 9 \\ 1 & -2 & 1 \end{vmatrix}$\
-
-
-$\begin{vmatrix} 1 &   -3 &   0\\ 0 &   1 &   0 \\ 0 &   0 &   1 \end{vmatrix}$\
-
-
-
-
---->2*Col3\
-
-
-$\bold{3).}$\
-
-$\begin{vmatrix} 2 & 5 & -2\\ 0 & -20 & 9 \\ 1 & -2 & 1 \end{vmatrix}$\
-
-
-$\begin{vmatrix} 1 &   -3 &   0\\ 0 &   1 &   0 \\ 0 &   0 &   2 \end{vmatrix}$\
-
-
-
-
-
---->-1*Col1 + Col3\
-
-
-
-$\bold{4).}$\
-
-$\begin{vmatrix} 2 & 5 & -2\\ 0 & -20 & 9 \\ 1 & -9 & 4 \end{vmatrix}$\
-
-
-$\begin{vmatrix} 1 &   -3 &   -1\\ 0 &   1 &   0 \\ 0 &   0 &   2 \end{vmatrix}$\
-
-
-
-
-
---->20*Col3\
-
-
-
-$\bold{5).}$\
-
-$\begin{vmatrix} 2 & 5 & -2\\ 0 & -20 & 9 \\ 0 & -180 & 80 \end{vmatrix}$\
-
-
-$\begin{vmatrix} 1 &   -3 &   -20\\ 0 &   1 &   0 \\ 0 &   0 &   40 \end{vmatrix}$\
-
-
-
-
-
---->-9*Col2 + Col3\
-
-
-
-
-$\bold{6).}$\
-
-$\begin{vmatrix} 2 & 0 & 0\\ 5 & -20 & 0\\ -2 & 9 & -1 \end{vmatrix}$\
-
-
-$\begin{vmatrix} 1 &   -3 &   7\\ 0 &   1 &   -9 \\ 0 &   0 &   40 \end{vmatrix}$\
-
-
-
-
+\hspace{4 cm}
+\begingroup
+ 
+\begin{tabular}{ c c c c c c }
+$\bold{Step 1}$ &  & $\bold{Step 2}$  &  & $\bold{Step 3}$ \\
+$\begin{vmatrix} 2 & 6 & 1\\ 5 & -5 & -2 \\ -2 & 3 & 1 \end{vmatrix}$ &  & $\begin{vmatrix} 2 & 0 & 1\\ 5 & -20 & -2 \\ -2 & 9 & 1 \end{vmatrix}$ &  & $\begin{vmatrix} 2 & 0 & 2\\ 5 & -20 & -4 \\ -2 & 9 & 2 \end{vmatrix}$ \\  
+ & $\xrightarrow{-3*C1 + C2}$ &  & $\xrightarrow{2*C3}$ & & $\xrightarrow{-1*C1+C3}$\\
+$\begin{vmatrix} 1 &   0 &   0\\ 0 &   1 &   0 \\ 0 &   0 &   1 \end{vmatrix}$ &  & $\begin{vmatrix} 1 &   -3 &   0\\ 0 &   1 &   0 \\ 0 &   0 &   1 \end{vmatrix}$ &  & $\begin{vmatrix} 1 &   -3 &   0\\ 0 &   1 &   0 \\ 0 &   0 &   2 \end{vmatrix}$\\
+ &  &  \\
+\end{tabular}
+\endgroup
+
+\hspace{3cm}
+
+\begingroup
+ 
+\begin{tabular}{ c c c c c }
+ $\bold{Step 4}$ &  & $\bold{Step 5}$  &  & $\bold{Step 6}$ \\
+$\begin{vmatrix} 2 & 0 & 0\\ 5 & -20 & -9 \\ -2 & 9 & 4 \end{vmatrix}$ &  & $\begin{vmatrix} 2 & 0 & 0\\ 5 & -20 & -180 \\ -2 & 9 & 80 \end{vmatrix}$ &  &
+$\begin{vmatrix} 2 & 0 & 0\\ 5 & -20 & 0 \\ -2 & 9 & -1 \end{vmatrix}$\\
+ & $\xrightarrow{20*C3}$ &  & $\xrightarrow{-9*C2 + C3}$ & \\ 
+ $\begin{vmatrix} 1 &   -3 &   -1\\ 0 &   1 &   0 \\ 0 &   0 &   2 \end{vmatrix}$ &  &
+$\begin{vmatrix} 1 &   -3 &   -20\\ 0 &   1 &   0 \\ 0 &   0 &   40 \end{vmatrix}$ & &
+$\begin{vmatrix} 1 &   -3 &  7\\ 0 &   1 &   -9 \\ 0 &   0 &   40 \end{vmatrix}$\\
+ &  &  \\
+\end{tabular}
+\endgroup
 
 
 Rank(A) = 3\
@@ -1310,111 +1249,49 @@ We continue column reduction working backwords from the last column. The objecti
 
 
 
-
-
 --->-9*Col3 + Col2\
 
 
 
-$\bold{7).}$\
-
-
-$\begin{vmatrix} 2 & 0 & 0\\ 5 & -20 & 0\\ -2 & 0 & -1 \end{vmatrix}$\
-
-
-$\begin{vmatrix} 1 &   60 &   7\\ 0 &   -80 &   -9 \\ 0 &   360 &   40 \end{vmatrix}$\
-
-
-
---->-2*Col3 + Col1\
-
-
-
-$\bold{8).}$\
-
-
-$\begin{vmatrix} 2 & 0 & 0\\ 5 & -20 & 0\\ 0 & 0 & -1 \end{vmatrix}$\
-
-
-$\begin{vmatrix} -13 &   60 &   7\\ 18 &   -80 &   -9 \\ -80 &   360 &   40 \end{vmatrix}$\
-
-
---->4*Col1\
-
-
-
-
-$\bold{9).}$\
-
-
-$\begin{vmatrix} 8 & 0 & 0\\ 20 & -20 & 0\\ 0 & 0 & -1 \end{vmatrix}$\
-
-
-$\begin{vmatrix} -52 &   60 &   7\\ 72 &   -80 &   -9 \\ -320 &   360 &   40 \end{vmatrix}$\
-
-
-
---->Col2 +Col1\
-
-
-
-
-$\bold{10).}$\
-
-
-$\begin{vmatrix} 8 & 0 & 0\\ 0 & -20 & 0\\ 0 & 0 & -1 \end{vmatrix}$\
-
-
-$\begin{vmatrix} 8 &   60 &   7\\ -8 &   -80 &   -9 \\ 40 &   360 &   40 \end{vmatrix}$\
-
-
-
-
---->$\frac{1}{8}$ *Col1\
-
-
-
-
-$\bold{11).}$\
-
-
-$\begin{vmatrix} 1 & 0 & 0\\ 0 & -20 & 0\\ 0 & 0 & -1 \end{vmatrix}$\
-
-
-$\begin{vmatrix} 1 &   60 &   7\\ -1 &   -80 &   -9 \\ 5 &   360 &   40 \end{vmatrix}$\
-
-
-
---->$\frac{-1}{20}$ *Col2\
-
-
-
-
-$\bold{12).}$\
-
-
-$\begin{vmatrix} 1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & -1 \end{vmatrix}$\
-
-
-$\begin{vmatrix} 1 &   -3 &   7\\ -1 &   4 &   -9 \\ 5 &   -18 &   40 \end{vmatrix}$\
-
-
-
---->-1 *Col3\
-
-
-
-
-$\bold{13).}$\
-
-
-$\begin{vmatrix} 1 & 0 & 0\\ 0 & 1 & 0\\ 0 & 0 & 1 \end{vmatrix}$\
-
-
-$\begin{vmatrix} 1 &   -3 &   -7\\ -1 &   4 &   9 \\ 5 &   -18 &   -40 \end{vmatrix}$\
+\begingroup
+ 
+\begin{tabular}{ c c c c c c}
+$\bold{Step 7}$ &  & $\bold{Step 8}$  &  & $\bold{Step 9}$ \\
+$\begin{vmatrix} 2 & 0 & 0\\ 5 & -20 & 0 \\ -2 & 0 & -1 \end{vmatrix}$ &  & $\begin{vmatrix} 2 & 0 & 0\\ 5 & -20 & 0 \\ 0 & 0 & -1 \end{vmatrix}$ &  &
+$\begin{vmatrix} 8 & 0 & 0\\ 20 & -20 & 0 \\ 0 & 0 & -1 \end{vmatrix}$\\
+ & $\xrightarrow{-2*C3 +C1}$ &  & $\xrightarrow{4*C1}$ & & $\xrightarrow{C2 + C1}$ \\ 
+$\begin{vmatrix} 1 &   60 &   7\\ 0 &   -80 &   -9 \\ 0 &   360 &   40 \end{vmatrix}$ &  &
+$\begin{vmatrix} -13 &  60 &   7\\ 18 &   -80 &   -9\\ -80 & 360 &   40 \end{vmatrix}$ & &
+$\begin{vmatrix} -52 &   60 &  7\\ 72 &   -80 &   -9 \\ -320 & 360 &   40 \end{vmatrix}$\\
+ &  &  \\
+\end{tabular}
+\endgroup
+
+\hspace{3cm}
+
+
+\begingroup
+ 
+\begin{tabular}{ c c c c c c c }
+$\bold{Step 10}$ &  & $\bold{Step 11}$  &  & $\bold{Step 12}$ & & $\bold{Step 13}$ \\
+$\begin{vmatrix} 8 & 0 & 0\\ 0 & -20 & 0 \\ 0 & 0 & -1 \end{vmatrix}$ &  & $\begin{vmatrix} 1 & 0 & 0\\ 0 & -20 & 0 \\ 0 & 0 & -1 \end{vmatrix}$ &  &
+$\begin{vmatrix} 1 & 0 & 0\\ 0 & 1 & 0 \\ 0 & 0 & -1 \end{vmatrix}$ &  &
+$\begin{vmatrix} 1 & 0 & 0\\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{vmatrix}$\\
+ & $\xrightarrow{1/8 * C1}$ &  & $\xrightarrow{-1/20 *C2}$ & & $\xrightarrow{-1*C3}$ \\ 
+$\begin{vmatrix} 8 &   60 &  7\\ -8 & -80 &   -9 \\ 40 &   360 &   40 \end{vmatrix}$ &  &
+$\begin{vmatrix} 1 &  60 &   7\\ -1 & -80 &   -9\\ 5 & 360 &  40 \end{vmatrix}$ & &
+$\begin{vmatrix} 1 &  -3 &   7\\ -1 &   4 &   -9\\ 5 & -18 &   40 \end{vmatrix}$ & &
+$\begin{vmatrix} 1 &  -3 &  -7\\ -1 &   4 &    9 \\ 5 & -18 & -40 \end{vmatrix}$\\
+ &  &  \\
+\end{tabular}
+\endgroup
+
+\hspace{2cm}
 
 
 Thus:\
+
+\hspace{2cm}
 
 $$A^{-1}=\begin{vmatrix} 1 &   -3 &   -7\\ -1 &   4 &   9 \\ 5 &   -18 &   -40 \end{vmatrix}$$\
 
@@ -1460,150 +1337,134 @@ Denote:$A=\begin{pmatrix} 1 & 2 & 1\\ 0 & 4 & 3 \\ 3 & 6 & 0\end{pmatrix}$, $b=\
 
 $$A^{-1}=\begin{pmatrix} \frac{3}{2}&   \frac{1}{2} &   -\frac{1}{6}\\ -\frac{3}{4} &   \frac{1}{4} &   \frac{1}{4} \\ 1 &   0 &   -\frac{1}{3} \end{pmatrix}$$\
 
+\hspace{3cm}
+
 Solution: $x=A^{-1}b=\begin{pmatrix} \frac{3}{2}&   \frac{1}{2} &   -\frac{1}{6}\\ -\frac{3}{4} &   \frac{1}{4} &   \frac{1}{4} \\ 1 &   0 &   -\frac{1}{3} \end{pmatrix}$$\begin{pmatrix} 4\\ 3\\ -3 \end{pmatrix}=\begin{pmatrix} 5\\ -3\\ 5 \end{pmatrix}$\
 
 \newpage
 
-$\bold{1).}$\
-
-
-
-
---->-2*Col1 + Col2\
-
-
-
-
-$\bold{2).}$\
-
-$\begin{vmatrix} 1 & 0 & 1\\ 0 & 4 & 3 \\ 3 & 0 & 0 \end{vmatrix}$\
-
-
-$\begin{vmatrix} 1 &   -2 &   0\\ 0 &   1 &   0 \\ 0 &   0 &   1 \end{vmatrix}$\
-
-
-
-
-
---->-1*Col1 + Col3\
-
-
-$\bold{3).}$\
-
-$\begin{vmatrix} 1 & 0 & 0\\ 0 & 4 & 3 \\ 3 & 0 & -3 \end{vmatrix}$\
-
-
-$\begin{vmatrix} 1 &   -2 &   -1\\ 0 &   1 &   0 \\ 0 &   0 &   1 \end{vmatrix}$\
-
-
-
---->-3*Col2\
-
-
-
-$\bold{4).}$\
-
-$\begin{vmatrix} 1 & 0 & 0\\ 0 & -12 & 3 \\ 3 & 0 & -3 \end{vmatrix}$\
-
-
-$\begin{vmatrix} 1 &   6 &   -1\\ 0 &   -3 &   0 \\ 0 &   0 &   1 \end{vmatrix}$\
-
-
-
---->4*Col3\
-
-
-
-$\bold{5).}$\
-
-$\begin{vmatrix} 1 & 0 & 0\\ 0 & -12 & 12 \\ 3 & 0 & -12 \end{vmatrix}$\
-
-
-$\begin{vmatrix} 1 &   6 &   -4\\ 0 &   -3 &   0 \\ 0 &   0 &   4 \end{vmatrix}$\
-
-
-
---->Col2 + Col3\
-
-
-$\bold{6).}$\
-
-$\begin{vmatrix} 1 & 0 & 0\\ 0 & -12 & 0 \\ 3 & 0 & -12 \end{vmatrix}$\
-
-
-$\begin{vmatrix} 1 &   6 &   2\\ 0 &   -3 &   -3 \\ 0 &   0 &   4 \end{vmatrix}$\
-
-
-
---->4*Col1\
-
-
-$\bold{7).}$\
-
-$\begin{vmatrix} 4 & 0 & 0\\ 0 & -12 & 0 \\ 12 & 0 & -12 \end{vmatrix}$\
-
-
-$\begin{vmatrix} 4 &   6 &   2\\ 0 &   -3 &   -3 \\ 0 &   0 &   4 \end{vmatrix}$\
-
-
-
---->Col3+Col1\
-
-
-$\bold{8).}$\
-
-$\begin{vmatrix} 4 & 0 & 0\\ 0 & -12 & 0 \\ 0 & 0 & -12 \end{vmatrix}$\
-
-
-$\begin{vmatrix} 6 &   6 &   2\\ -3 &   -3 &   -3 \\ 4 &   0 &   4 \end{vmatrix}$\
-
-
-
---->$\frac{1}{4}$*Col1\
-
-
-$\bold{9).}$\
-
-$\begin{vmatrix} 1 & 0 & 0\\ 0 & -12 & 0 \\ 0 & 0 & -12 \end{vmatrix}$\
-
-
-$\begin{vmatrix} 1.5 &   6 &   2\\ -0.75 &   -3 &   -3 \\ 1 &   0 &   4 \end{vmatrix}$\
-
-
-
---->$-\frac{1}{12}$*Col2\
-
-
-$\bold{10).}$\
-
-$\begin{vmatrix} 1 & 0 & 0\\ 0 & 1 & 0 \\ 0 & 0 & -12 \end{vmatrix}$\
-
-
-$\begin{vmatrix} 1.5 &   -0.5 &   2\\ -0.75 & 0.25 &   -3 \\ 1 &   0 &   4 \end{vmatrix}$\
-
-
-
---->$-\frac{1}{12}$*Col3\
-
-$\bold{11).}$\
-
-$\begin{vmatrix} 1 & 0 & 0\\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{vmatrix}$\
-
-
-$\begin{vmatrix} 1.5 &   -0.5 &   -0.17\\ -0.75 & 0.25 & 0.25 \\ 1 &   0 & -0.33 \end{vmatrix}$\
-
-
+\begingroup
+ 
+\begin{tabular}{ c c c c c c }
+$\bold{Step 1}$ &  & $\bold{Step 2}$  &  & $\bold{Step 3}$ \\
+$\begin{vmatrix} 1 & 2 & 1\\ 0 & 4 & 3 \\ 3 & 6 & 0 \end{vmatrix}$ &  & $\begin{vmatrix} 1 & 0 & 1\\ 0 & 4 & 3 \\ 3 & 0 & 0 \end{vmatrix}$ &  & $\begin{vmatrix} 1 & 0 & 0\\ 0 & 4 & 3 \\ 3 & 0 & -3 \end{vmatrix}$ \\  
+ & $\xrightarrow{-2*C1 + C2}$ &  & $\xrightarrow{-1C1*C3}$ & & $\xrightarrow{-3*C2}$\\
+$\begin{vmatrix} 1 &   0 &   0\\ 0 &   1 &   0 \\ 0 &   0 &   1 \end{vmatrix}$ &  & $\begin{vmatrix} 1 &   -2 &   0\\ 0 &   1 &   0 \\ 0 &   0 &   1 \end{vmatrix}$ &  & $\begin{vmatrix} 1 &   -2 &   -1\\ 0 &   1 &   0 \\ 0 &   0 &   1 \end{vmatrix}$\\
+ &  &  \\
+\end{tabular}
+\endgroup
+
+\hspace{3cm}
 
 \begingroup
  
-\begin{tabular}{ c c c }
-Step 1 &  & Step 2 \\
-$\begin{vmatrix} 1 & 2 & 1\\ 0 & 4 & 3 \\ 3 & 6 & 0 \end{vmatrix}$ &  & $\begin{vmatrix} 1 & 2 & 1\\ 0 & 4 & 3 \\ 3 & 6 & 0 \end{vmatrix}$\\
- & $\xrightarrow{hello}$ & \\
-$\begin{vmatrix} 1 &   0 &   0\\ 0 &   1 &   0 \\ 0 &   0 &   1 \end{vmatrix}$ &  & $\begin{vmatrix} 1 &   0 &   0\\ 0 &   1 &   0 \\ 0 &   0 &   1 \end{vmatrix}$\\
- &  & \\
+\begin{tabular}{ c c c c c c }
+$\bold{Step 4}$ &  & $\bold{Step 5}$  &  & $\bold{Step 6}$ \\
+$\begin{vmatrix} 1 & 0 & 0\\ 0 & -12 & 3 \\ 3 & 0 & -3 \end{vmatrix}$ &  & $\begin{vmatrix} 1 & 0 & 0\\ 0 & -12 & 12 \\ 3 & 0 & -12 \end{vmatrix}$ &  & $\begin{vmatrix} 1 & 0 & 0\\ 0 & -12 & 0 \\ 3 & 0 & -12 \end{vmatrix}$ \\  
+ & $\xrightarrow{4*C3}$ &  & $\xrightarrow{C2+C3}$ & & $\xrightarrow{4*C1}$\\
+$\begin{vmatrix} 1 &   6 &   -1\\ 0 &   -3 &  0 \\ 0 &   0 &   1 \end{vmatrix}$ &  & $\begin{vmatrix} 1 &   6 &   -4\\ 0 &   -3 &   0 \\ 0 &   0 &   4 \end{vmatrix}$ &  & $\begin{vmatrix} 1 &   6 &   2\\ 0 &   -3 &   -3\\ 0 &   0 &   4 \end{vmatrix}$\\
+ &  &  \\
 \end{tabular}
 \endgroup
+
+\hspace{3cm}
+
+\begingroup
+ 
+\begin{tabular}{ c c c c c c }
+$\bold{Step 7}$ &  & $\bold{Step 8}$  &  & $\bold{Step 9}$ \\
+$\begin{vmatrix} 4 & 0 & 0\\ 0 & -12 & 0 \\ 12 & 0 & -12 \end{vmatrix}$ &  & $\begin{vmatrix} 4 & 0 & 0\\ 0 & -12 & 0 \\ 0 & 0 & -12 \end{vmatrix}$ &  & $\begin{vmatrix} 1 & 0 & 0\\ 0 & -12 & 0 \\ 0 & 0 & -12 \end{vmatrix}$ \\  
+ & $\xrightarrow{C3+C1}$ &  & $\xrightarrow{1/4*C1}$ & & $\xrightarrow{-1/12*C2}$\\
+$\begin{vmatrix} 4 &   6 &   2\\ 0 &   -3 &  -3 \\ 0 &   0 &   4 \end{vmatrix}$ &  & $\begin{vmatrix} 6 &   6 &   2\\ -3 &   -3 &   -3 \\ 4 &   0 &   4 \end{vmatrix}$ &  & $\begin{vmatrix} 1.5 &   6 &   2\\ -0.75 &   -3 &   -3\\ 1 &   0 &   4 \end{vmatrix}$\\
+ &  &  \\
+\end{tabular}
+\endgroup
+
+\hspace{3cm}
+
+\begingroup
+ 
+\begin{tabular}{ c c c  }
+$\bold{Step 10}$ &  & $\bold{Step 11}$\\
+ $\begin{vmatrix} 1 & 0 & 0\\ 0 & 1 & 0 \\ 0 & 0 & -12 \end{vmatrix}$ &  & $\begin{vmatrix} 1 & 0 & 0\\ 0 & 1 & 0 \\ 0 & 0 & 1 \end{vmatrix}$ \\  
+ & $\xrightarrow{-1/12*C2}$\\
+ $\begin{vmatrix} 1.5 & -0.5 &   2\\ -0.75 & 0.25 &  -3 \\ 1 &   0 &   4 \end{vmatrix}$ &  & $\begin{vmatrix} 1.5 & -0.5 & -0.17\\ -0.75 & 0.25 & 0.25 \\ 1 & 0 & -0.33\end{vmatrix}$\\
+ &  &  \\
+\end{tabular}
+\endgroup
+
+\newpage
+
+#9. EIGENVALUES AND EIGENVECTORS\
+
+
+Remember that $A_{nxm}$, represents a linear map $R^{n}$ ---> $R^{n}$.\
+
+Consider the question: Are there any vectors $\underline{x}$ $\epsilon$ $R^{n}$ s.t. A, either streches or shrinks them?\
+
+That is there $\lambda$ $\epsilon$ $R$ and $\underline{x}$ $\epsilon$ $R^{n}$ s.t.\
+
+\hspace{3cm}
+
+ $(*)$ A*$\underline{x}$ = $\lambda$ $\underline{x}$\
+ 
+The case $\underline{x}$ = $\underline{0}$ always works and is not interesting.\
+
+If such $\lambda$ and $\underline{x}$ $\not=$ 0 fixits:
+
+$\lambda$ - EIGENVALUE\
+
+\hspace{1cm}
+
+$\underline{x}$ - EIGENVECTOR\
+
+\hspace{1cm}
+
+We can rewrite $(*)$:\
+
+\hspace{1cm}
+
+A*$\underline{x}$ - $\lambda$ I $\underline{x}$ = $\underline{0}$\
+
+(A-$\lambda$ I) $\underline{x}$ = $\underline{0}$\
+
+since:
+
+$\underline{x}$ $\not=$ $\underline{0}$ and,\
+
+(A-$\lambda$ I) must be singular\
+
+$(**)$ |A - $\lambda$I| = 0  is called CHARACTERISTIC EQUATION and is a polynomial of degree n in $\lambda$. Which may or may not have real roots, but always has COMPLEX roots.\
+
+One can solve for the roots of the polynomial to find the eigenvalues.
+
+Note that if $\underline{u}$ is an eigenvector then so is $\alpha$$\underline{u}$ for $all$ $\alpha$ $\not=$ 0.
+
+####EXAMPLE (calculating eigenvalues)\
+
+$$A =\begin{pmatrix} 1 & 4 \\ 9 & 1\end{pmatrix}$$\
+
+\hspace{3cm}
+
+We solve the characteristic equation:\
+
+\hspace{3cm}
+
+(A-$\lambda$ I) = |$\begin{pmatrix} 1 & 4 \\ 9 & 1\end{pmatrix}$ - $\begin{pmatrix} \lambda & 0 \\ 0 & \lambda\end{pmatrix}$| = |$\begin{pmatrix} 1-\lambda & 4 \\ 9 & 1-\lambda\end{pmatrix}$| = 0\
+
+<==>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
