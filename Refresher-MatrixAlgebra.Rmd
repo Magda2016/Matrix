@@ -1452,7 +1452,71 @@ We solve the characteristic equation:\
 
 (A-$\lambda$ I) = |$\begin{pmatrix} 1 & 4 \\ 9 & 1\end{pmatrix}$ - $\begin{pmatrix} \lambda & 0 \\ 0 & \lambda\end{pmatrix}$| = |$\begin{pmatrix} 1-\lambda & 4 \\ 9 & 1-\lambda\end{pmatrix}$| = 0\
 
-<==>
+
+
+$\Longleftrightarrow$ $(1-\lambda)^2$ - 4*9=0\
+
+\hspace{3cm}
+
+$\Longleftrightarrow$ $\lambda_{1}$=-5,  $\lambda_{2}$=7\
+
+\newpage
+
+####EXAMPLE: Find Eigenvectors\
+
+$\lambda_{1}$=-5
+
+A-$\lambda_{1}$I = $\begin{pmatrix}  6 & 4\\ 9 & 1\end{pmatrix}$
+
+\hspace{2cm}
+
+$\begin{pmatrix}  6 & 4\\ 9 & 1\end{pmatrix}\begin{pmatrix}  x_{1}\\ x_{2}\end{pmatrix}$ = 0 $\Longleftrightarrow$ $6x_{1} + 4x_{2} = 0$\
+
+\hspace{2cm}
+
+One solution is: $\begin{pmatrix}  2 \\ -3\end{pmatrix}$
+
+$\lambda_{2}$=7
+
+A-$\lambda_{2}$I = $\begin{pmatrix}  -6 & 4\\ 9 & -6\end{pmatrix}$
+
+\hspace{2cm}
+
+$\begin{pmatrix}  -6 & 4\\ 9 & -6\end{pmatrix}\begin{pmatrix}  x_{1}\\ x_{2}\end{pmatrix}$ = 0 $\Longleftrightarrow$ $-6x_{1} + 4x_{2} = 0$\
+
+\hspace{2cm}
+
+One solution is: $\begin{pmatrix}  2 \\ 3\end{pmatrix}$
+
+\hspace{3cm}
+
+####PROPERTIES OF EIGENVALUES:
+
+i) Eigenvalues can be complex for ...
+ii) If A is symmetric --> real eigenvalues
+iii) |A|= $\prod\limits_{i=1}^{n} \lambda{i}$ 
+iv) $T_{r}$(A)=$\sum\limits_{i=1}^{n} \lambda{i}$
+v) Rank of A = number of nonzero eigenvalues (Counting Multiple Roots)
+vi) $\exists A^{-1} \Longleftrightarrow$ all eigenvalues are non zero
+vii) If A is symmetric then $\exists$ n LIN eigenvectors (one for $\forall$ root and multiple vectors for multiple roots)
+
+####EXAMPLE:Fin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
