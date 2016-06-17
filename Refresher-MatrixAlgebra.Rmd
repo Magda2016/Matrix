@@ -257,6 +257,9 @@ $\mathbf{Example}$ \
     \end{tikzpicture}
   \end{center}
   
+  \begin{tikzcd}
+a\ar[r,"A"]\ar[rr,out=-30,in=210,swap,"C"] & b\ar[r,"B"] & c
+\end{tikzcd}
   
   $I$: $y=\alpha*x$\
   
@@ -1500,8 +1503,49 @@ v) Rank of A = number of nonzero eigenvalues (Counting Multiple Roots)
 vi) $\exists A^{-1} \Longleftrightarrow$ all eigenvalues are non zero
 vii) If A is symmetric then $\exists$ n LIN eigenvectors (one for $\forall$ root and multiple vectors for multiple roots)
 
-####EXAMPLE:Fin
+\newpage
 
+####EXAMPLE: Find eigenvalues and eigenvectors of the following symmetric matrix:\
+
+
+$$A=\begin{pmatrix}  1 & -1 & 0\\ -1 & 1 & 0\\ 0 & 0 & 2\end{pmatrix}$$
+
+|A-$\lambda$ I| = $\begin{vmatrix} 1-\lambda & -1 & 4 \\ -1 & 1-\lambda & 0 \\ 0 & 0 & 2-\lambda\end{vmatrix}$ 
+
+\begin{align}
+     &=(1-\lambda)^2(2-\lambda)-(-1)(-1)(2-\lambda) \\
+     &= (1-\lambda)^2(2-\lambda)-(2-\lambda)\\
+     &=(2-\lambda)((1-\lambda)^2-1) \\
+     &=(2-\lambda)(1-\lambda -1)(1-\lambda +1)\\
+     &=-(2-\lambda)^2\lambda
+\end{align}
+
+
+Hence, the eigenvalues are: 0, 2, 2 (multiple)\
+
+
+Eigenvectors:
+
+\hspace{2cm}
+
+
+ 
+\begin{tikzcd}
+  0 \arrow[row sep=tiny]{r} & \begin{pmatrix}  -1 \\  1 \\ 0 \end{pmatrix}
+\end{tikzcd}
+
+
+
+\hspace{2cm}
+
+\begin{tikzcd}[row sep=tiny]
+                         & \begin{pmatrix}  -1 \\  1 \\ 0 \end{pmatrix}              \\
+2 \arrow{ur}\arrow{dr} &                  \\ 
+                          & \begin{pmatrix}  0 \\  0 \\ 1 \end{pmatrix}
+\end{tikzcd}
+
+
+One can check that 3 eigenvectors are LIN, moreover there are orthogonal.
 
 
 

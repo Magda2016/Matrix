@@ -2,7 +2,10 @@
 \usepackage{threeparttable}
 \usepackage{booktabs}
 \usepackage{lipsum}
+\usepackage{mathtools}
 \usepackage{tcolorbox}
+\usepackage{tkz-graph}
+\usepackage{tikz-cd}
 \newcommand{\vect}[1]{\boldsymbol{#1}}
 
 \newtcolorbox{pression}[2][]{enhanced,title=My title,
@@ -18,3 +21,13 @@ title={#2},#1}
     interior style={white},
     segmentation style={black,solid,opacity=0.2,line width=1pt}
 }
+
+\GraphInit[vstyle = Shade]
+\tikzset{
+  LabelStyle/.style = { rectangle, rounded corners, draw,
+                        minimum width = 2em, fill = green!30,
+                        text = red, font = \bfseries },
+  VertexStyle/.append style = { inner sep=3pt,
+                                font = \Large\bfseries},
+  EdgeStyle/.append style = {->, bend left} }
+\thispagestyle{empty}

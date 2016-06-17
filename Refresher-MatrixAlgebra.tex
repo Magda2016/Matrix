@@ -80,6 +80,7 @@
 \usepackage{mathtools}
 \usepackage{tcolorbox}
 \usepackage{tkz-graph}
+\usepackage{tikz-cd}
 \newcommand{\vect}[1]{\boldsymbol{#1}}
 
 \newtcolorbox{pression}[2][]{enhanced,title=My title,
@@ -324,6 +325,10 @@ clear.\\
       \Edge[label = III](A)(C)
     \end{tikzpicture}
   \end{center}
+
+\begin{tikzcd}
+a\ar[r,"A"]\ar[rr,out=-30,in=210,swap,"C"] & b\ar[r,"B"] & c
+\end{tikzcd}
 
 \(I\): \(y=\alpha*x\)\\[2\baselineskip] \(II\):
 \(\zeta=\beta*y\)\\[2\baselineskip] \(III\):\(\zeta=\beta*\alpha*x\)
@@ -1472,7 +1477,47 @@ One solution is: \(\begin{pmatrix} 2 \\ 3\end{pmatrix}\)
   \(\exists A^{-1} \Longleftrightarrow\) all eigenvalues are non zero
 \item
   If A is symmetric then \(\exists\) n LIN eigenvectors (one for
-  \(\forall\))
+  \(\forall\) root and multiple vectors for multiple roots)
 \end{enumerate}
+
+\newpage
+
+\paragraph{\texorpdfstring{EXAMPLE: Find eigenvalues and eigenvectors of
+the following symmetric matrix:\\
+}{EXAMPLE: Find eigenvalues and eigenvectors of the following symmetric matrix: }}\label{example-find-eigenvalues-and-eigenvectors-of-the-following-symmetric-matrix}
+
+\[A=\begin{pmatrix}  1 & -1 & 0\\ -1 & 1 & 0\\ 0 & 0 & 2\end{pmatrix}\]
+
+\textbar{}A-\(\lambda\) I\textbar{} =
+\(\begin{vmatrix} 1-\lambda & -1 & 4 \\ -1 & 1-\lambda & 0 \\ 0 & 0 & 2-\lambda\end{vmatrix}\)
+
+\begin{align}
+     &=(1-\lambda)^2(2-\lambda)-(-1)(-1)(2-\lambda) \\
+     &= (1-\lambda)^2(2-\lambda)-(2-\lambda)\\
+     &=(2-\lambda)((1-\lambda)^2-1) \\
+     &=(2-\lambda)(1-\lambda -1)(1-\lambda +1)\\
+     &=-(2-\lambda)^2\lambda
+\end{align}
+
+Hence, the eigenvalues are: 0, 2, 2 (multiple)\\
+
+Eigenvectors:
+
+\hspace{2cm}
+
+\begin{tikzcd}
+  0 \arrow[row sep=tiny]{r} & \begin{pmatrix}  -1 \\  1 \\ 0 \end{pmatrix}
+\end{tikzcd}
+
+\hspace{2cm}
+
+\begin{tikzcd}[row sep=tiny]
+                         & \begin{pmatrix}  -1 \\  1 \\ 0 \end{pmatrix}              \\
+2 \arrow{ur}\arrow{dr} &                  \\ 
+                          & \begin{pmatrix}  0 \\  0 \\ 1 \end{pmatrix}
+\end{tikzcd}
+
+One can check that 3 eigenvectors are LIN, moreover there are
+orthogonal.
 
 \end{document}
