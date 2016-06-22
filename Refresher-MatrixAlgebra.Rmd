@@ -1,7 +1,6 @@
 ---
 title: "Matrix Algebra - Refresher"
 author: "T. Markaryan"
-date: "May 11, 2016"
 output: 
   pdf_document:
     fig_caption: true
@@ -117,11 +116,11 @@ $\underline{a}, \underline{b}, \underline{z}$.\
 
 
 
-$\mathbf{Equality}$ of matrices: $A=B$ 
+$\mathbf{Equality}$ of matrices:\
 
-  - They are the same size
-  - $A_{ij}=B_{ij}$
-  
+$A=B$ <=> 1) They are the same size, 2) $A_{ij}=B_{ij}$ $\forall(i,j)$
+
+\newpage  
   
 $\mathbf{Transpose}$ of matrix:
 
@@ -129,7 +128,7 @@ $\mathbf{Transpose}$ of matrix:
 \
 
 
-Examples of transpose will be provide.\
+Examples of transpose will be provided.\
 
 
 
@@ -139,7 +138,7 @@ $\mathbf{Symmetric}$ $A'=B$ \
 
 
 
-#3. Matrices as Transformations
+#3. Algebra of Matrices
 
 
 ####Addition of Matrices\
@@ -231,35 +230,25 @@ $\mathbf{Example}$ \
 
 
 
-#4. Multiplication of Matrices\
+#### Multiplication of Matrices\
 
 
 
 Matrix multiplication may first seem unnatural or strange, but viewing it as a $\textbf{composition}$ of two linear maps makes it completelly clear.\
 
 
-$\mathbf{Example}$ \
+$\mathbf{Example}$\
+
+\hspace{3cm}
 
   - One-dimensional case
   
-
-  
-  \begin{center}
-    \begin{tikzpicture}
-      \SetGraphUnit{3}
-      \Vertex[L=R]{B}
-      \WE[L=R](B){A}
-      \EA[L=R](B){C}
-      \Edge[label = I](A)(B)
-      \Edge[label = II](B)(C)
-      \tikzset{EdgeStyle/.append style = {bend left = 50}}
-      \Edge[label = III](A)(C)
-    \end{tikzpicture}
-  \end{center}
-  
+\hspace{3cm} 
+$$
   \begin{tikzcd}
-a\ar[r,"A"]\ar[rr,out=-30,in=210,swap,"C"] & b\ar[r,"B"] & c
+R\ar[r,"I"]\ar[rr,out=-30,in=210,swap,"III"] & R\ar[r,"II"] & R
 \end{tikzcd}
+$$
   
   $I$: $y=\alpha*x$\
   
@@ -274,8 +263,11 @@ a\ar[r,"A"]\ar[rr,out=-30,in=210,swap,"C"] & b\ar[r,"B"] & c
    
    
   
-  $$\mathbbm{R^2}\xrightarrow{--1--}\mathbbm{R^2}\xrightarrow{--2--}\mathbbm{R^2}$$
-  $$\overrightarrow{---3---}$$\
+  $$
+  \begin{tikzcd}
+R^2\ar[r,"I"]\ar[rr,out=-30,in=210,swap,"III"] & R^2\ar[r,"II"] & R^2
+\end{tikzcd}
+$$
   
   
   1:$\begin{cases} y_1 = x_1 + x_2\\ y_2 = x_1 - x_2 \end{cases}$\
@@ -324,12 +316,15 @@ So it is natural to define $BA=C$, and we can easily verify that:
  
  $$\begin{pmatrix}A\end{pmatrix}_{m*n} \begin{pmatrix}B\end{pmatrix}_{n*p}$$
  
- $$n=m$$\
+ $$n=n$$\
  
  -> Dimensions must conform before $A*B$ can be defined.\
  
-   $$\mathbbm{R_p}\xrightarrow{--B--}\mathbbm{R_n}\xrightarrow{--A--}\mathbbm{R_m}$$
-  $$\overrightarrow{---AB---}$$\
+   $$
+  \begin{tikzcd}
+R_{p}\ar[r,"B"]\ar[rr,out=-30,in=210,swap,"AB"] & R_{n}\ar[r,"A"] & R_{m}
+\end{tikzcd}
+$$
   
   
   \begin{tcolorbox}[colback=green!5,colframe=red!40!black,title=Definition]
@@ -338,7 +333,7 @@ as $\begin{pmatrix}C\end{pmatrix}_{i*j} = \sum\limits_{k=1}^n \mathcal A_{ik}B_{
 \end{tcolorbox}
 \ 
 
-
+\newpage
 
 $\mathbf{Examples}$ \
 
@@ -485,11 +480,10 @@ $\mathbf{Example}$\
   -Variance-Covariance Matrices are Positive Semi-Definite.\
   
   
-  
+\newpage  
   
   
 $\mathbf{Example}$\
-
 
 a) Show that:\
 
@@ -512,19 +506,19 @@ $\textbf{Properties of Matrix Multiplication.}$\
 
 
 
-  -1. Associative:\
+  1. Associative:\
   
     $A(BC)=(AB)C$\
   
-  -2. Distributive:\
+  2. Distributive:\
   
     $A(B+C)=AB+AC$\
     
     $(B+C)A=BA+CA$\
     
-  -3. NOT-Commutative\
+  3. NOT-Commutative\
   
-  -4. Identity Matrix\
+  4. Identity Matrix\
   
   $I_{nxn}$=$\begin{bmatrix} 1 & \cdots & 0 \\ \vdots & \ddots & \vdots \\ 0 & \cdots & 1 \end{bmatrix}$ serves as multiplicative identity for square matrices for $\forall$ $A_{nxn}$
   
@@ -536,16 +530,14 @@ $\textbf{Properties of Matrix Multiplication.}$\
 -> $\text{\textit{Note:In case of identity matrix product does not commute!}}$\
 
 
--v5. For any matrix $A_{mxn}$\
-
-$$A_{mxn}O_{nxp}=O_{mxp}$$\
-
+  5. For any matrix $A_{mxn}$
+$$A_{mxn}O_{nxp}=O_{mxp}$$
 $$(AB)'=B'A'$$
 $$(ABC)'=C'B'A'$$\
 
 
-
-#5. Inverse of Matrices\
+\newpage
+#### Inverse of Matrices\
 
 
 
@@ -659,7 +651,7 @@ Otherwise there are called $\textbf{LINEARLY DEPENDENT}$.\
 
 
 
-####EXAMPLES\
+$\mathbf{Example}$\
 
 
 a) $a=\begin{pmatrix}  1\\ 2 \end{pmatrix}$ and $b=\begin{pmatrix}  4\\ 8 \end{pmatrix}$ --> Ale Linearly Dependent\
@@ -697,7 +689,7 @@ $$\sum\limits_{k=1}^p \lambda_k \underline{x_k} \neq \underline{0}$$
 Otherwise , they are linearly dependent.\
 
 
-####EXAMPLE\
+$\mathbf{Example}$\
 
 The Vectors:\
 
@@ -706,7 +698,7 @@ $\begin{pmatrix}  0\\ 3\\2 \end{pmatrix}$,  $\begin{pmatrix}  1\\ -1\\-3 \end{pm
 
 
 
-####RANK OF MATRIX\
+####Rank of Matrix\
 
 
   
@@ -735,7 +727,7 @@ A square matrix $A_{nxn}$ is called $\textbf{Full-Rank}$ if rank $(A)=n$.
 Full rank square matrices have inverses ..... is also true.
 
 
-####EXAMPLE(REVISIT)\
+$\mathbf{Example}$\
 
 $$A=\begin{pmatrix} 1 & 3 \\ 2 & 6 \end{pmatrix}$$
 
@@ -756,7 +748,7 @@ If A is non-singular then Rank(AB)=Rank(B)=Rank(BA).
 
 
 
-#6. Determinant of a  Matrix\
+#4. Determinant of a  Matrix\
 
 
   -You may remember determinants from your linear algebra courses mean applying $\textbf{Crame's Rule }$ to solving $\textbf{systems of linear equations}$, also $\textbf{Jacobians}$.
@@ -775,7 +767,7 @@ If A is non-singular then Rank(AB)=Rank(B)=Rank(BA).
   $$\begin{pmatrix} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23}\\a_{31} & a_{32} & a_{33} \end{pmatrix}=a_{11}a_{22}a_{33}+a_{21}a_{32}a_{13}+a_{12}a_{23}a_{31}-a_{13}a_{22}a_{31}-a_{12}a_{21}a_{33}-a_{11}a_{32}a_{23}$$ \
   
   
-####PROPERTIES OF DETERMINANT\
+####Properties of Determinant\
 
 a) $|A|=|A'|$
 
@@ -796,9 +788,7 @@ h) Adding a scalar multiple of one row (column) to another row (column) does not
 i) If matrix is triangular , determinant is a product of diagonal elements.
 
 
-####EXAMPLE\
-
- 
+$\mathbf{Example}$\
 
   1. A=$\begin{pmatrix} 1 & 2 \\ 1 & d-1 \end{pmatrix}$, then $|A|$ = $1*(-1)-1*2=-1-2=-3$\
   
@@ -815,15 +805,13 @@ i) If matrix is triangular , determinant is a product of diagonal elements.
   
   
   
-#7. PATRITIONED MATRICES\
+#5. Partitioned Matrices\
 
 
 We can partition matrices into $\textbf{blocks}$.\
 
 
-####EXAMPLE\
-
-
+$\mathbf{Example}$\
 
 
 $A=\left[\begin{array}{c|c}\begin{matrix} 1 & 2 \\ 3 & 6 \end{matrix} & \begin{matrix} 0 & 4 \\ 8 & 0 \end{matrix} \\ \hline \begin{matrix} 1 & 2 \end{matrix} & \begin{matrix} 0 & 1\end{matrix} \end{array} \right]=\left[\begin{array}{c|c}A_{11} & A_{12} \\ \hline A_{21} & A_{22} \end{array} \right]$
@@ -836,7 +824,7 @@ As long as dimensions conform, matrix addition , multiplication, transposition w
 
 
 
-####EXAMPLE\
+$\mathbf{Example}$\
 
 
 $\underline{b}=\left[\begin{array}{c|c} 2 \\ 0 \\ \hline -1 \\ 2 \end{array}\right]$ =
@@ -862,7 +850,7 @@ Of course we get the same answer by performing multiplication on original matric
 
 
 
-####EXAMPLE\
+$\mathbf{Example}$\
 
 If R&S are non-singular show that : $\begin{pmatrix} R & 0 \\ L & S\end{pmatrix}^{-1}$ = $\begin{pmatrix} R^{-1} & 0 \\ -S^{-1}LR^{-1} & S^{-1}\end{pmatrix}$\
 
@@ -871,8 +859,7 @@ PROOF --->  Provide.
 
 
      
-      
-####EXAMPLE\ 
+$\mathbf{Example}$\ 
 
 If A is a block diagonal matrix:\
 
@@ -892,7 +879,7 @@ Find det(A) --->  Provide solution.
 
 
 
-#7. SOME SPECIAL MATRICES\
+####Some Special Matrices\
 
   - SYMMETRIC MATRICES\
   
@@ -922,7 +909,7 @@ Find det(A) --->  Provide solution.
   
   
 
-####EXAMPLE\
+$\mathbf{Example}$\
 
 Is $A =\begin{pmatrix} \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}} \\ -\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}\end{pmatrix}$ orthonormal? Show it.\
 
@@ -944,7 +931,7 @@ Is $A =\begin{pmatrix} \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}} \\ -\frac{1}{\sq
       If A is idempotent than $(I - H)$ is too. 
       
       
-####EXAMPLE\
+$\mathbf{Example}$\
 
 The hat matrix from OLS
 
@@ -952,7 +939,7 @@ $H=X(X'X)^{-1}X'$ is idempotent.   Show it!
 
 
 
-##PERMUTATION MATRICES\
+####Permutation Matrices\
 
 
 $\textbf{P}$ is called a $\textbf{Permutation Matrix}$ if it can be obtained from identity matrix by permuting columns.\
@@ -967,7 +954,7 @@ $\textbf{P}$ is called a $\textbf{Permutation Matrix}$ if it can be obtained fro
      
      
      
-##DIAGONAL MATRICES\
+####Diagonal Matrices\
 
 If only non zero elements are on diagonal:\
 
@@ -1017,7 +1004,7 @@ Properties ( the same as for diagonal matrices):
   b)  $\prod_{i=1}^{n}a_{ii} \neq 0$ <=> Full Rank\
   
   
-#8. COLUMN REDUCTION\
+#6. Column Reduction\
 
 Column reduction of matrices is used for various purposes, including:\
 
@@ -1047,7 +1034,7 @@ $\underline{Notes:}$
   -One could also perfrom row reduction in which case one pre-multiplies vs. post-multiplication.\
   
   
-###ELEMENTARY COLUMN OPERATIONS\
+####Elementary Column Operations\
 
 $\bold{1}$. SWITCH  2 COLUMNS: $\underline{i}$ & $\underline{j}$\
 
@@ -1056,7 +1043,7 @@ $\bold{1}$. SWITCH  2 COLUMNS: $\underline{i}$ & $\underline{j}$\
   
 
 
-####EXAMPLE\
+$\mathbf{Example}$\
 
 $A =\begin{pmatrix} 2 & 6 & 1\\ 5 & -5 & -2 \\ -2 & 3 & 1 \end{pmatrix}$\
 
@@ -1099,7 +1086,7 @@ element of which is replaced by  $\underline{n}$\
 
 
 
-####EXAMPLE\
+$\mathbf{Example}$\
 
 
 
@@ -1144,7 +1131,7 @@ $\bold{3}$. MULTIPLY COLUMN $\underline{j}$ BY COLUMN BY A SCALAR $\underline{n}
   
   
   
-####EXAMPLE\
+$\mathbf{Example}$\
 
 $A =\begin{pmatrix} 2 & 6 & 1\\ 5 & -5 & -2 \\ -2 & 3 & 1 \end{pmatrix}$\
 
@@ -1199,7 +1186,7 @@ The goal of column operations is to create zeros in critical positions of the ma
   
   
 
-####EXAMPLE\
+$\mathbf{Example}$\
 
 
 Find the rank and the determinant of:\
@@ -1244,7 +1231,7 @@ Rank(A) = 3\
 Det(A) = 2*(-20)*(-1):(2*20) = 1\
 
 
-####EXAMPLE CONTINOUS\
+$\mathbf{Example}$\
 
 Find $A^{-1}$\
 
@@ -1300,9 +1287,7 @@ $$A^{-1}=\begin{vmatrix} 1 &   -3 &   -7\\ -1 &   4 &   9 \\ 5 &   -18 &   -40 \
 
 \newpage
 
-####EXAMPLE\
-
-
+$\mathbf{Example}$\
 
 Solve:
 
@@ -1325,7 +1310,7 @@ Solution will be: $x = A^{-1}b=\begin{pmatrix} 1 &   -3 &   -7\\ -1 &   4 &   9 
 
 
 
-####EXAMPLE\
+$\mathbf{Example}$\
 
 
 
@@ -1398,7 +1383,7 @@ $\bold{Step 10}$ &  & $\bold{Step 11}$\\
 
 \newpage
 
-#9. EIGENVALUES AND EIGENVECTORS\
+#7. Eigenvalues and Eigenvectors\
 
 
 Remember that $A_{nxm}$, represents a linear map $R^{n}$ ---> $R^{n}$.\
@@ -1443,7 +1428,9 @@ One can solve for the roots of the polynomial to find the eigenvalues.
 
 Note that if $\underline{u}$ is an eigenvector then so is $\alpha$$\underline{u}$ for $all$ $\alpha$ $\not=$ 0.
 
-####EXAMPLE (calculating eigenvalues)\
+$\mathbf{Example}$\
+
+Calculating Eigenvalues\
 
 $$A =\begin{pmatrix} 1 & 4 \\ 9 & 1\end{pmatrix}$$\
 
@@ -1465,7 +1452,9 @@ $\Longleftrightarrow$ $\lambda_{1}$=-5,  $\lambda_{2}$=7\
 
 \newpage
 
-####EXAMPLE: Find Eigenvectors\
+$\mathbf{Example}$\
+
+Find Eigenvectors\
 
 $\lambda_{1}$=-5
 
@@ -1493,7 +1482,7 @@ One solution is: $\begin{pmatrix}  2 \\ 3\end{pmatrix}$
 
 \hspace{3cm}
 
-####PROPERTIES OF EIGENVALUES:
+####Properties of Eigenvalues:
 
 i) Eigenvalues can be complex for ...
 ii) If A is symmetric --> real eigenvalues
@@ -1505,7 +1494,9 @@ vii) If A is symmetric then $\exists$ n LIN eigenvectors (one for $\forall$ root
 
 \newpage
 
-####EXAMPLE: Find eigenvalues and eigenvectors of the following symmetric matrix:\
+$\mathbf{Example}$\
+
+Find eigenvalues and eigenvectors of the following symmetric matrix:\
 
 
 $$A=\begin{pmatrix}  1 & -1 & 0\\ -1 & 1 & 0\\ 0 & 0 & 2\end{pmatrix}$$

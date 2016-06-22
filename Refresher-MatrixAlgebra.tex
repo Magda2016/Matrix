@@ -68,9 +68,8 @@
   \author{T. Markaryan}
   \preauthor{\centering\large\emph}
   \postauthor{\par}
-  \predate{\centering\large\emph}
-  \postdate{\par}
-  \date{May 11, 2016}
+  \date{}
+  \predate{}\postdate{}
 
 
 \usepackage{bbm}
@@ -224,15 +223,11 @@ We denote column vectors by \(a, b, z...\) and to emphasize that they
 are vectors we use:\\
  \(\underline{a}, \underline{b}, \underline{z}\).\\
 
-\(\mathbf{Equality}\) of matrices: \(A=B\)
+\(\mathbf{Equality}\) of matrices:\\
+ \(A=B\) \textless{}=\textgreater{} 1) They are the same size, 2)
+\(A_{ij}=B_{ij}\) \(\forall(i,j)\)
 
-\begin{itemize}
-\tightlist
-\item
-  They are the same size
-\item
-  \(A_{ij}=B_{ij}\)
-\end{itemize}
+\newpage  
 
 \(\mathbf{Transpose}\) of matrix:
 
@@ -243,12 +238,11 @@ are vectors we use:\\
   \(n\)x\(m\) matrix.\\
 \end{itemize}
 
-Examples of transpose will be provide.\\
+Examples of transpose will be provided.\\
 
 \(\mathbf{Symmetric}\) \(A'=B\)\\
 
-\section{3. Matrices as
-Transformations}\label{matrices-as-transformations-1}
+\section{3. Algebra of Matrices}\label{algebra-of-matrices}
 
 \paragraph{\texorpdfstring{Addition of Matrices\\
 }{Addition of Matrices }}\label{addition-of-matrices}
@@ -303,32 +297,29 @@ Matrix \(O_{mxn}\) consisting of all \(O's\) is called
 4*\(\begin{pmatrix} 1 & 0 & -1 \\ 2 & 1 & 4\end{pmatrix}\) =
 \(\begin{pmatrix} 4 & 0 & -4 \\ 8 & 4 & 16\end{pmatrix}\)\\
 
-\section{\texorpdfstring{4. Multiplication of Matrices\\
-}{4. Multiplication of Matrices }}\label{multiplication-of-matrices}
+\paragraph{\texorpdfstring{Multiplication of Matrices\\
+}{Multiplication of Matrices }}\label{multiplication-of-matrices}
 
 Matrix multiplication may first seem unnatural or strange, but viewing
 it as a \(\textbf{composition}\) of two linear maps makes it completelly
 clear.\\
 
 \(\mathbf{Example}\)\\
- - One-dimensional case
+ \hspace{3cm}
 
-\begin{center}
-    \begin{tikzpicture}
-      \SetGraphUnit{3}
-      \Vertex[L=R]{B}
-      \WE[L=R](B){A}
-      \EA[L=R](B){C}
-      \Edge[label = I](A)(B)
-      \Edge[label = II](B)(C)
-      \tikzset{EdgeStyle/.append style = {bend left = 50}}
-      \Edge[label = III](A)(C)
-    \end{tikzpicture}
-  \end{center}
+\begin{itemize}
+\tightlist
+\item
+  One-dimensional case
+\end{itemize}
 
-\begin{tikzcd}
-a\ar[r,"A"]\ar[rr,out=-30,in=210,swap,"C"] & b\ar[r,"B"] & c
+\hspace{3cm}
+
+\[
+  \begin{tikzcd}
+R\ar[r,"I"]\ar[rr,out=-30,in=210,swap,"III"] & R\ar[r,"II"] & R
 \end{tikzcd}
+\]
 
 \(I\): \(y=\alpha*x\)\\[2\baselineskip] \(II\):
 \(\zeta=\beta*y\)\\[2\baselineskip] \(III\):\(\zeta=\beta*\alpha*x\)
@@ -339,8 +330,11 @@ a\ar[r,"A"]\ar[rr,out=-30,in=210,swap,"C"] & b\ar[r,"B"] & c
   \(\mathbbm{R^2}\) case
 \end{itemize}
 
-\[\mathbbm{R^2}\xrightarrow{--1--}\mathbbm{R^2}\xrightarrow{--2--}\mathbbm{R^2}\]
-\[\overrightarrow{---3---}\]\\
+\[
+  \begin{tikzcd}
+R^2\ar[r,"I"]\ar[rr,out=-30,in=210,swap,"III"] & R^2\ar[r,"II"] & R^2
+\end{tikzcd}
+\]
 
 1:\(\begin{cases} y_1 = x_1 + x_2\\ y_2 = x_1 - x_2 \end{cases}\)\\[2\baselineskip]
 and,
@@ -377,12 +371,14 @@ matrix mulitplication is only defined for matrices:\\
 
 \[\begin{pmatrix}A\end{pmatrix}_{m*n} \begin{pmatrix}B\end{pmatrix}_{n*p}\]
 
-\[n=m\]\\
+\[n=n\]\\
  -\textgreater{} Dimensions must conform before \(A*B\) can be
 defined.\\
-
-\[\mathbbm{R_p}\xrightarrow{--B--}\mathbbm{R_n}\xrightarrow{--A--}\mathbbm{R_m}\]
-\[\overrightarrow{---AB---}\]\\
+ \[
+  \begin{tikzcd}
+R_{p}\ar[r,"B"]\ar[rr,out=-30,in=210,swap,"AB"] & R_{n}\ar[r,"A"] & R_{m}
+\end{tikzcd}
+\]
 
 \begin{tcolorbox}[colback=green!5,colframe=red!40!black,title=Definition]
 Let $\begin{pmatrix}A\end{pmatrix}_{m*n}$ and $\begin{pmatrix}B\end{pmatrix}_{n*p}$  then $C=AB$ is defined
@@ -390,6 +386,8 @@ as $\begin{pmatrix}C\end{pmatrix}_{i*j} = \sum\limits_{k=1}^n \mathcal A_{ik}B_{
 \end{tcolorbox}
 
 ~
+
+\newpage
 
 \(\mathbf{Examples}\)\\
 
@@ -515,16 +513,11 @@ and \("\leq"\), respectively.\\
 
 -Variance-Covariance Matrices are Positive Semi-Definite.\\
 
+\newpage  
+
 \(\mathbf{Example}\)\\
-
-\begin{enumerate}
-\def\labelenumi{\alph{enumi})}
-\tightlist
-\item
-  Show that:\\
-\end{enumerate}
-
-\(A=\begin{pmatrix} 2 & -2 \\ -2 & 2 \end{pmatrix}\) is positive
+ a) Show that:\\
+ \(A=\begin{pmatrix} 2 & -2 \\ -2 & 2 \end{pmatrix}\) is positive
 semi-definite.\\
 
 \begin{enumerate}
@@ -550,10 +543,22 @@ is positive definite.\\
 
 \(\textbf{Properties of Matrix Multiplication.}\)\\
 
--1. Associative:\\[2\baselineskip] \(A(BC)=(AB)C\)\\[2\baselineskip] -2.
-Distributive:\\[2\baselineskip] \(A(B+C)=AB+AC\)\\[2\baselineskip]
-\((B+C)A=BA+CA\)\\[2\baselineskip] -3. NOT-Commutative\\[2\baselineskip]
--4. Identity Matrix\\[2\baselineskip]
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Associative:\\
+   \(A(BC)=(AB)C\)\\
+\item
+  Distributive:\\
+   \(A(B+C)=AB+AC\)\\
+   \((B+C)A=BA+CA\)\\
+\item
+  NOT-Commutative\\
+\item
+  Identity Matrix\\
+\end{enumerate}
+
 \(I_{nxn}\)=\(\begin{bmatrix} 1 & \cdots & 0 \\ \vdots & \ddots & \vdots \\ 0 & \cdots & 1 \end{bmatrix}\)
 serves as multiplicative identity for square matrices for \(\forall\)
 \(A_{nxn}\)
@@ -563,12 +568,19 @@ serves as multiplicative identity for square matrices for \(\forall\)
 -\textgreater{}
 \(\text{\textit{Note:In case of identity matrix product does not commute!}}\)\\
 
--v5. For any matrix \(A_{mxn}\)\\
- \[A_{mxn}O_{nxp}=O_{mxp}\]\\
- \[(AB)'=B'A'\] \[(ABC)'=C'B'A'\]\\
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  For any matrix \(A_{mxn}\) \[A_{mxn}O_{nxp}=O_{mxp}\] \[(AB)'=B'A'\]
+  \[(ABC)'=C'B'A'\]\\
+\end{enumerate}
 
-\section{\texorpdfstring{5. Inverse of Matrices\\
-}{5. Inverse of Matrices }}\label{inverse-of-matrices}
+\newpage
+
+\paragraph{\texorpdfstring{Inverse of Matrices\\
+}{Inverse of Matrices }}\label{inverse-of-matrices}
 
 \begin{tcolorbox}[colback=green!5,colframe=red!40!black,title=Definition]
   If for a squarmatrix $A_{nxn}$ $\exists$  a matrix $B_{nxn}$ sit.\
@@ -683,8 +695,7 @@ Are called \(\textbf{LINEARLY INDEPENDENT}\) if for \(\forall\)
 
 Otherwise there are called \(\textbf{LINEARLY DEPENDENT}\).\\
 
-\paragraph{\texorpdfstring{EXAMPLES\\
-}{EXAMPLES }}\label{examples}
+\(\mathbf{Example}\)\\
 
 \begin{enumerate}
 \def\labelenumi{\alph{enumi})}
@@ -725,17 +736,15 @@ is called \(\textbf{LINEARLY INDEPENDENT}\) if for \(\forall\)
 
 Otherwise , they are linearly dependent.\\
 
-\paragraph{\texorpdfstring{EXAMPLE\\
-}{EXAMPLE }}\label{example}
-
-The Vectors:\\
+\(\mathbf{Example}\)\\
+ The Vectors:\\
  \(\begin{pmatrix} 0\\ 3\\2 \end{pmatrix}\),
 \(\begin{pmatrix} 1\\ -1\\-3 \end{pmatrix}\) ,
 \(\begin{pmatrix} 2\\ 2\\-1 \end{pmatrix}\) and
 \(\begin{pmatrix} 1\\ 13\\11 \end{pmatrix}\) are Linearly Dependent.
 
-\paragraph{\texorpdfstring{RANK OF MATRIX\\
-}{RANK OF MATRIX }}\label{rank-of-matrix}
+\paragraph{\texorpdfstring{Rank of Matrix\\
+}{Rank of Matrix }}\label{rank-of-matrix}
 
 \begin{tcolorbox}[colback=green!5,colframe=red!40!black,title=Definition]
 Rank of a matrix is the largest number of Linear Independent or Rows. 
@@ -753,10 +762,8 @@ A square matrix $A_{nxn}$ is called $\textbf{Full-Rank}$ if rank $(A)=n$.
 
 Full rank square matrices have inverses \ldots{}.. is also true.
 
-\paragraph{\texorpdfstring{EXAMPLE(REVISIT)\\
-}{EXAMPLE(REVISIT) }}\label{examplerevisit}
-
-\[A=\begin{pmatrix} 1 & 3 \\ 2 & 6 \end{pmatrix}\]
+\(\mathbf{Example}\)\\
+ \[A=\begin{pmatrix} 1 & 3 \\ 2 & 6 \end{pmatrix}\]
 
 -\textgreater{}
 \(\text{\textit{Note that column linearly dependent.}}\)\\
@@ -771,8 +778,8 @@ If A is non-singular then Rank(AB)=Rank(B)=Rank(BA).
 
 \end{tcolorbox}
 
-\section{\texorpdfstring{6. Determinant of a Matrix\\
-}{6. Determinant of a Matrix }}\label{determinant-of-a-matrix}
+\section{\texorpdfstring{4. Determinant of a Matrix\\
+}{4. Determinant of a Matrix }}\label{determinant-of-a-matrix}
 
 -You may remember determinants from your linear algebra courses mean
 applying \(\textbf{Crame's Rule }\) to solving
@@ -793,8 +800,8 @@ combersome and usually some decomposition method is used. Calculating
 3x3 is still ok:\\[2\baselineskip]
 \[\begin{pmatrix} a_{11} & a_{12} & a_{13} \\ a_{21} & a_{22} & a_{23}\\a_{31} & a_{32} & a_{33} \end{pmatrix}=a_{11}a_{22}a_{33}+a_{21}a_{32}a_{13}+a_{12}a_{23}a_{31}-a_{13}a_{22}a_{31}-a_{12}a_{21}a_{33}-a_{11}a_{32}a_{23}\]\\
 
-\paragraph{\texorpdfstring{PROPERTIES OF DETERMINANT\\
-}{PROPERTIES OF DETERMINANT }}\label{properties-of-determinant}
+\paragraph{\texorpdfstring{Properties of Determinant\\
+}{Properties of Determinant }}\label{properties-of-determinant}
 
 \begin{enumerate}
 \def\labelenumi{\alph{enumi})}
@@ -821,14 +828,14 @@ combersome and usually some decomposition method is used. Calculating
   elements.
 \end{enumerate}
 
-\paragraph{\texorpdfstring{EXAMPLE\\
-}{EXAMPLE }}\label{example-1}
+\(\mathbf{Example}\)\\
+ 1. A=\(\begin{pmatrix} 1 & 2 \\ 1 & d-1 \end{pmatrix}\), then \(|A|\) =
+\(1*(-1)-1*2=-1-2=-3\)\\
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\item
-  A=\(\begin{pmatrix} 1 & 2 \\ 1 & d-1 \end{pmatrix}\), then \(|A|\) =
-  \(1*(-1)-1*2=-1-2=-3\)\\
+\setcounter{enumi}{1}
+\tightlist
 \item
   \(\begin{pmatrix} 1 & -1 \\ 1 & 2 \end{pmatrix}\) = \(1*2-1*(-1)=3\)
   --\textgreater{}(f)\\
@@ -844,13 +851,12 @@ multiply col 1 by -2 and add to col 2\\[2\baselineskip]
 \(\begin{pmatrix} 1 & 0 \\ 1 & -3 \end{pmatrix}\) = \(-3\) same as
 \textbar{}A\textbar{} --\textgreater{}(h)\\
 
-\section{\texorpdfstring{7. PATRITIONED MATRICES\\
-}{7. PATRITIONED MATRICES }}\label{patritioned-matrices}
+\section{\texorpdfstring{5. Partitioned Matrices\\
+}{5. Partitioned Matrices }}\label{partitioned-matrices}
 
 We can partition matrices into \(\textbf{blocks}\).\\
 
-\paragraph{\texorpdfstring{EXAMPLE\\
-}{EXAMPLE }}\label{example-2}
+\(\mathbf{Example}\)\\
 
 \(A=\left[\begin{array}{c|c}\begin{matrix} 1 & 2 \\ 3 & 6 \end{matrix} & \begin{matrix} 0 & 4 \\ 8 & 0 \end{matrix} \\ \hline \begin{matrix} 1 & 2 \end{matrix} & \begin{matrix} 0 & 1\end{matrix} \end{array} \right]=\left[\begin{array}{c|c}A_{11} & A_{12} \\ \hline A_{21} & A_{22} \end{array} \right]\)
 
@@ -862,8 +868,7 @@ We can partition matrices into \(\textbf{blocks}\).\\
 As long as dimensions conform, matrix addition , multiplication,
 transposition work the same way. That is the power of PARTITIONING.\\
 
-\paragraph{\texorpdfstring{EXAMPLE\\
-}{EXAMPLE }}\label{example-3}
+\(\mathbf{Example}\)\\
 
 \(\underline{b}=\left[\begin{array}{c|c} 2 \\ 0 \\ \hline -1 \\ 2 \end{array}\right]\)
 = \(\begin{pmatrix} b_1 \\ b_2\end{pmatrix}\)\\
@@ -882,16 +887,14 @@ where:\\
  Of course we get the same answer by performing multiplication on
 original matrices. (DO IT!)\\
 
-\paragraph{\texorpdfstring{EXAMPLE\\
-}{EXAMPLE }}\label{example-4}
-
-If R\&S are non-singular show that :
+\(\mathbf{Example}\)\\
+ If R\&S are non-singular show that :
 \(\begin{pmatrix} R & 0 \\ L & S\end{pmatrix}^{-1}\) =
 \(\begin{pmatrix} R^{-1} & 0 \\ -S^{-1}LR^{-1} & S^{-1}\end{pmatrix}\)\\
 
 PROOF ---\textgreater{} Provide.
 
-\paragraph{EXAMPLE~}\label{example-5}
+\(\mathbf{Example}\)~
 
 If A is a block diagonal matrix:\\
 
@@ -904,8 +907,8 @@ Let:\\
 
 Find det(A) ---\textgreater{} Provide solution.
 
-\section{\texorpdfstring{7. SOME SPECIAL MATRICES\\
-}{7. SOME SPECIAL MATRICES }}\label{some-special-matrices}
+\paragraph{\texorpdfstring{Some Special Matrices\\
+}{Some Special Matrices }}\label{some-special-matrices}
 
 \begin{itemize}
 \item
@@ -936,10 +939,8 @@ Find det(A) ---\textgreater{} Provide solution.
   ORTHOGONAL.\\
 \end{itemize}
 
-\paragraph{\texorpdfstring{EXAMPLE\\
-}{EXAMPLE }}\label{example-6}
-
-Is
+\(\mathbf{Example}\)\\
+ Is
 \(A =\begin{pmatrix} \frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}} \\ -\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}\end{pmatrix}\)
 orthonormal? Show it.\\
 
@@ -965,15 +966,13 @@ orthonormal? Show it.\\
   If A is idempotent than \((I - H)\) is too.
 \end{itemize}
 
-\paragraph{\texorpdfstring{EXAMPLE\\
-}{EXAMPLE }}\label{example-7}
-
-The hat matrix from OLS
+\(\mathbf{Example}\)\\
+ The hat matrix from OLS
 
 \(H=X(X'X)^{-1}X'\) is idempotent. Show it!
 
-\subsection{\texorpdfstring{PERMUTATION MATRICES\\
-}{PERMUTATION MATRICES }}\label{permutation-matrices}
+\paragraph{\texorpdfstring{Permutation Matrices\\
+}{Permutation Matrices }}\label{permutation-matrices}
 
 \(\textbf{P}\) is called a \(\textbf{Permutation Matrix}\) if it can be
 obtained from identity matrix by permuting columns.\\
@@ -990,8 +989,8 @@ obtained from identity matrix by permuting columns.\\
   \(|AP|\) = \(|PA|\) = +/- a\\
 \end{enumerate}
 
-\subsection{\texorpdfstring{DIAGONAL MATRICES\\
-}{DIAGONAL MATRICES }}\label{diagonal-matrices}
+\paragraph{\texorpdfstring{Diagonal Matrices\\
+}{Diagonal Matrices }}\label{diagonal-matrices}
 
 If only non zero elements are on diagonal:\\
 
@@ -1046,8 +1045,8 @@ Properties ( the same as for diagonal matrices):
   Rank\\
 \end{enumerate}
 
-\section{\texorpdfstring{8. COLUMN REDUCTION\\
-}{8. COLUMN REDUCTION }}\label{column-reduction}
+\section{\texorpdfstring{6. Column Reduction\\
+}{6. Column Reduction }}\label{column-reduction}
 
 Column reduction of matrices is used for various purposes, including:\\
 
@@ -1069,16 +1068,15 @@ which preserve certain properties (most commonly, solutions)
 -One could also perfrom row reduction in which case one pre-multiplies
 vs.~post-multiplication.\\
 
-\subsubsection{\texorpdfstring{ELEMENTARY COLUMN OPERATIONS\\
-}{ELEMENTARY COLUMN OPERATIONS }}\label{elementary-column-operations}
+\paragraph{\texorpdfstring{Elementary Column Operations\\
+}{Elementary Column Operations }}\label{elementary-column-operations}
 
 \(\bold{1}\). SWITCH 2 COLUMNS: \(\underline{i}\) \& \(\underline{j}\)\\
  -Multiply from right by the permutate matrix that is obtained from the
 identity matrix by swapping its \(\underline{i^{th}}\) \&
 \(\underline{j^{th}}\) columns.\\
 
-\paragraph{\texorpdfstring{EXAMPLE\\
-}{EXAMPLE }}\label{example-8}
+\(\mathbf{Example}\)\\
 
 \(A =\begin{pmatrix} 2 & 6 & 1\\ 5 & -5 & -2 \\ -2 & 3 & 1 \end{pmatrix}\)\\
 
@@ -1108,8 +1106,7 @@ Let:
 -Multiply from the right by the identity matrix, \((jj)^{th}\) element
 of which is replaced by \(\underline{n}\)\\
 
-\paragraph{\texorpdfstring{EXAMPLE\\
-}{EXAMPLE }}\label{example-9}
+\(\mathbf{Example}\)\\
 
 \(A =\begin{pmatrix} 2 & 6 & 1\\ 5 & -5 & -2 \\ -2 & 3 & 1 \end{pmatrix}\)\\
 
@@ -1141,8 +1138,7 @@ Let:
 multiplying its column \(\underline{j}\) by \(\underline{n}\) and adding
 to and replacing column \(\underline{i}\).\\
 
-\paragraph{\texorpdfstring{EXAMPLE\\
-}{EXAMPLE }}\label{example-10}
+\(\mathbf{Example}\)\\
 
 \(A =\begin{pmatrix} 2 & 6 & 1\\ 5 & -5 & -2 \\ -2 & 3 & 1 \end{pmatrix}\)\\
 
@@ -1189,8 +1185,7 @@ of the matrix, that will then allow to calcuate:\\
  * Determinant\\
  * Etc.\\
 
-\paragraph{\texorpdfstring{EXAMPLE\\
-}{EXAMPLE }}\label{example-11}
+\(\mathbf{Example}\)\\
 
 Find the rank and the determinant of:\\
 
@@ -1229,10 +1224,8 @@ $\begin{vmatrix} 1 &   -3 &  7\\ 0 &   1 &   -9 \\ 0 &   0 &   40 \end{vmatrix}$
 Rank(A) = 3\\
  Det(A) = 2\emph{(-20)}(-1):(2*20) = 1\\
 
-\paragraph{\texorpdfstring{EXAMPLE CONTINOUS\\
-}{EXAMPLE CONTINOUS }}\label{example-continous}
-
-Find \(A^{-1}\)\\
+\(\mathbf{Example}\)\\
+ Find \(A^{-1}\)\\
  We continue column reduction working backwords from the last column.
 The objective is to get 0's at all non diagonal locations.\\
 
@@ -1280,10 +1273,8 @@ Thus:\\
 \[A^{-1}=\begin{vmatrix} 1 &   -3 &   -7\\ -1 &   4 &   9 \\ 5 &   -18 &   -40 \end{vmatrix}\]\\
  \newpage
 
-\paragraph{\texorpdfstring{EXAMPLE\\
-}{EXAMPLE }}\label{example-12}
-
-Solve:
+\(\mathbf{Example}\)\\
+ Solve:
 
 \[\begin{cases} 2x_1 + 6x_2 +x_3 = 0\\ 5x_1 - 5x_2 - 2x_3 = -1\\-2x_1 + 3x_2 +x_3 = 2 \end{cases}\]\\
 
@@ -1294,8 +1285,7 @@ Denote: \(x=\begin{pmatrix} x_1\\ x_2\\ x_3 \end{pmatrix}\),
 Solution will be:
 \(x = A^{-1}b=\begin{pmatrix} 1 & -3 & -7\\ -1 & 4 & 9 \\ 5 & -18 & -40 \end{pmatrix}\begin{pmatrix} 0\\ -1\\ 2 \end{pmatrix}=\begin{pmatrix} -11\\ 14\\ -62 \end{pmatrix}\)\\
 
-\paragraph{\texorpdfstring{EXAMPLE\\
-}{EXAMPLE }}\label{example-13}
+\(\mathbf{Example}\)\\
 
 Solve the system of equations by finding \(A^{-1}\). Example from page
 \ldots{}:
@@ -1368,8 +1358,8 @@ $\bold{Step 10}$ &  & $\bold{Step 11}$\\
 
 \newpage
 
-\section{\texorpdfstring{9. EIGENVALUES AND EIGENVECTORS\\
-}{9. EIGENVALUES AND EIGENVECTORS }}\label{eigenvalues-and-eigenvectors}
+\section{\texorpdfstring{7. Eigenvalues and Eigenvectors\\
+}{7. Eigenvalues and Eigenvectors }}\label{eigenvalues-and-eigenvectors}
 
 Remember that \(A_{nxm}\), represents a linear map \(R^{n}\)
 ---\textgreater{} \(R^{n}\).\\
@@ -1408,10 +1398,9 @@ Which may or may not have real roots, but always has COMPLEX roots.\\
 Note that if \(\underline{u}\) is an eigenvector then so is
 \(\alpha\)\(\underline{u}\) for \(all\) \(\alpha\) \(\not=\) 0.
 
-\paragraph{\texorpdfstring{EXAMPLE (calculating eigenvalues)\\
-}{EXAMPLE (calculating eigenvalues) }}\label{example-calculating-eigenvalues}
-
-\[A =\begin{pmatrix} 1 & 4 \\ 9 & 1\end{pmatrix}\]\\
+\(\mathbf{Example}\)\\
+ Calculating Eigenvalues\\
+ \[A =\begin{pmatrix} 1 & 4 \\ 9 & 1\end{pmatrix}\]\\
  \hspace{3cm}
 
 We solve the characteristic equation:\\
@@ -1429,10 +1418,9 @@ We solve the characteristic equation:\\
 \(\Longleftrightarrow\) \(\lambda_{1}\)=-5, \(\lambda_{2}\)=7\\
  \newpage
 
-\paragraph{\texorpdfstring{EXAMPLE: Find Eigenvectors\\
-}{EXAMPLE: Find Eigenvectors }}\label{example-find-eigenvectors}
-
-\(\lambda_{1}\)=-5
+\(\mathbf{Example}\)\\
+ Find Eigenvectors\\
+ \(\lambda_{1}\)=-5
 
 A-\(\lambda_{1}\)I = \(\begin{pmatrix} 6 & 4\\ 9 & 1\end{pmatrix}\)
 
@@ -1458,7 +1446,7 @@ One solution is: \(\begin{pmatrix} 2 \\ 3\end{pmatrix}\)
 
 \hspace{3cm}
 
-\paragraph{PROPERTIES OF EIGENVALUES:}\label{properties-of-eigenvalues}
+\paragraph{Properties of Eigenvalues:}\label{properties-of-eigenvalues}
 
 \begin{enumerate}
 \def\labelenumi{\roman{enumi})}
@@ -1482,9 +1470,8 @@ One solution is: \(\begin{pmatrix} 2 \\ 3\end{pmatrix}\)
 
 \newpage
 
-\paragraph{\texorpdfstring{EXAMPLE: Find eigenvalues and eigenvectors of
-the following symmetric matrix:\\
-}{EXAMPLE: Find eigenvalues and eigenvectors of the following symmetric matrix: }}\label{example-find-eigenvalues-and-eigenvectors-of-the-following-symmetric-matrix}
+\(\mathbf{Example}\)\\
+ Find eigenvalues and eigenvectors of the following symmetric matrix:\\
 
 \[A=\begin{pmatrix}  1 & -1 & 0\\ -1 & 1 & 0\\ 0 & 0 & 2\end{pmatrix}\]
 
